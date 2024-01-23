@@ -3,13 +3,82 @@ import img1 from "../../assets/img/projects/sophie bluel/sophie bluel1.png";
 import img2 from "../../assets/img/projects/sophie bluel/sophie bluel2.png";
 import img3 from "../../assets/img/projects/sophie bluel/sophie bluel3.png";
 import img4 from "../../assets/icons/sophie_Logo.png";
-import icons from "../../data/dataIcons.json";
+
+
+import icon1 from "../../assets/icons/html5.png";
+import icon2 from "../../assets/icons/css3.png";
+import icon3 from "../../assets/icons/sass.png";
+import icon4 from "../../assets/icons/js.png";
+import icon5 from "../../assets/icons/reactjs.png";
+import icon6 from "../../assets/icons/figma.png";
+import icon7 from "../../assets/icons/git.png";
+import icon8 from "../../assets/icons/nextjs.png";
+import icon9 from "../../assets/icons/nodejs.png";
+
+// import icons from "../../data/dataIcons.json";
 import { FaCalendarCheck, FaArrowLeft, FaArrowRight, FaLink, FaGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import dataProjet from "../../data/dataProjets.json";
 const Projet1 = () => {
 
-const dataImage = [img1, img2, img3];
+  const dataImage = [img1, img2, img3];
+  
+  const dataIcons = [
+    {
+      icon: icon1,
+      title: "HTML5",
+      href: "https://www.w3schools.com/html/",
+      category: "Front-end",
+    },
+    {
+      icon: icon2,
+      title: "CSS3",
+      href: "https://www.w3schools.com/css/",
+      category: "Front-end",
+    },
+    {
+      icon: icon3,
+      title: "SASS",
+      href: "https://sass-lang.com/",
+      category: "Front-end",
+    },
+    {
+      icon: icon4,
+      title: "Javascript",
+      href: "https://www.w3schools.com/js/",
+      category: "Front-end",
+    },
+    {
+      icon: icon5,
+      title: "ReactJS",
+      href: "https://fr.reactjs.org/",
+      category: "React",
+    },
+    {
+      icon: icon6,
+      title: "Figma",
+      href: "https://www.figma.com/",
+      category: "Design",
+    },
+    {
+      icon: icon7,
+      title: "Git",
+      href: "https://git-scm.com/",
+      category: "Front-end",
+    },
+    {
+      icon: icon8,
+      title: "NextJS",
+      href: "https://nextjs.org/",
+      category: "React",
+    },
+    {
+      icon: icon9,
+      title: "NodeJS",
+      href: "https://nodejs.org/en/",
+      category: "Back-end",
+    },
+  ];
 
 
 
@@ -116,15 +185,13 @@ const dataImage = [img1, img2, img3];
             <h3>Technologies utilisées</h3>
 
             <ul className="technologies">
-              {icons
-                .filter((item) => item.category === "Front-end")
-                .map((item, index) => {
-                  return (
-                    <li key={index}>
-                      <img src={item.icon} alt={item.title} />
-                    </li>
-                  );
-                })}
+              {dataIcons.filter((item) => item.category === "Front-end").map((item, index) => {
+                return (
+                  <li key={index}>
+                    <img src={item.icon} alt={item.title} />
+                  </li>
+                );
+              })}
             </ul>
 
             <hr />

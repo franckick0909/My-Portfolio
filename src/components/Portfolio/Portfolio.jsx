@@ -1,12 +1,82 @@
 import "./Portfolio.scss";
 import { motion } from "framer-motion";
 
-import dataProjet from "../../data/dataProjets.json";
+// import dataProjet from "../../data/dataProjets.json";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRocket } from "react-icons/fa6";
 
+import sophie1 from "../../assets/img/projects/sophie bluel/sophie bluel1.png";
+import kasa1 from "../../assets/img/projects/kasa/kasa1.png";
+import food1 from "../../assets/img/projects/ohmyfood/ohmyfood1.png";
+import prime1 from "../../assets/img/projects/netprime/netprime1.png";
+import folio1 from "../../assets/img/projects/portfolio/portfolio1.png";
+import cv1 from "../../assets/img/projects/cv/CV.png";
+
+
 const Portfolio = () => {
+
+
+  const dataProjet = [
+    {
+      id: 1,
+      name: "Sophie Bluel",
+      image: sophie1,
+      category: "cat2",
+      link: "/Projet1",
+      github:
+        "https://github.com/franckick0909/Portfolio-architecte-Sophie-Bluel",
+      url: "https://franckick0909.github.io/Portfolio-architecte-Sophie-Bluel/",
+    },
+    {
+      id: 2,
+      name: "Kasa",
+      image: kasa1,
+      category: "cat3",
+      github: "https://github.com/franckick0909/kasa-react",
+      url: "https://franckick0909.github.io/kasa-react/",
+    },
+    {
+      id: 3,
+      name: "Ohmyfood",
+      image: food1,
+      category: "cat1",
+      link: "/Projet3",
+      github: "https://github.com/franckick0909/OhMyFood",
+      url: "https://franckick0909.github.io/OhMyFood/",
+    },
+    {
+      id: 4,
+      name: "NetPrime",
+      image: prime1,
+      category: "cat2",
+      link: "/Projet4",
+      github: "https://github.com/franckick0909/NetPrime",
+      url: "https://franckick0909.github.io/NetPrime/",
+    },
+    {
+      id: 5,
+      name: "Portfolio",
+      image: folio1,
+      category: "cat2",
+      link: "/Projet5",
+      github: "https://github.com/franckick0909/Portfolio2",
+      url: "https://franckick0909.github.io/Portfolio2/",
+    },
+    {
+      id: 6,
+      name: "CV",
+      image: cv1,
+      category: "cat1",
+      link: "/Projet6",
+      github: "https://github.com/franckick0909/CV",
+      url: "https://franckick0909.github.io/CV/",
+    },
+  ];
+
+
+
+
 
   const [filter, setFilter] = useState("all");
   const [activeButton, setActiveButton] = useState("all");
@@ -169,7 +239,7 @@ const Portfolio = () => {
                         <Link to={item.link} className="projetLink btn btn-1">
                           Voir les projets <FaRocket />
                         </Link>
-                        <Link to="/Error"/>
+                        {/* <Link to="/Error"/> */}
                       </div>
                     </div>
                   </div>

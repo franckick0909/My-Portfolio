@@ -7,7 +7,10 @@ import Skills from "../../components/Skills/Skills";
 import Contact from "../../components/Contact/Contact";
 import Footer from "../../components/Footer/Footer";
 import "./Index.scss";
-//
+
+
+
+
 const Index = () => {
   return (
     <>

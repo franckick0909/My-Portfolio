@@ -1,7 +1,8 @@
+
 [
     {
         "id": "1",
-        "icon": "/src/assets/icons/html5.png",
+        "icon": "https://franckick0909.github.io/My-Portfolio/src/assets/icons/html5.png",
         "title": "HTML5",
         "href": "https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5",
         "category": "Front-end"
