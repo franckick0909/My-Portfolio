@@ -1,0 +1,24 @@
+@import "../../styles/App.scss";
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: $color-3;
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            color: $color-7;
+            background: $color-4;
+        }
+    }
+}
