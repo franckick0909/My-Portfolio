@@ -1,7 +1,5 @@
 import "./Portfolio.scss";
 import { motion } from "framer-motion";
-
-// import dataProjet from "../../data/dataProjets.json";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRocket } from "react-icons/fa6";
@@ -73,10 +71,6 @@ const Portfolio = () => {
       url: "https://franckick0909.github.io/CV/",
     },
   ];
-
-
-
-
 
   const [filter, setFilter] = useState("all");
   const [activeButton, setActiveButton] = useState("all");

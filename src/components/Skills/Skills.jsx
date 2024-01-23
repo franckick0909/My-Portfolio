@@ -2,6 +2,7 @@ import "./Skills.scss";
 import { motion } from "framer-motion";
 import { FaLink } from "react-icons/fa6";
 
+
 import icon1 from "../../assets/icons/html5.png";
 import icon2 from "../../assets/icons/css3.png";
 import icon3 from "../../assets/icons/sass.png";
@@ -14,7 +15,6 @@ import icon9 from "../../assets/icons/nodejs.png";
 
 
 const Skills = () => {
-
 
   const dataIcons = [
     {
