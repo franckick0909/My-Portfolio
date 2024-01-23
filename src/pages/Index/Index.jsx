@@ -8,26 +8,30 @@ import Contact from "../../components/Contact/Contact";
 import Footer from "../../components/Footer/Footer";
 import "./Index.scss";
 
-
-
-
 const Index = () => {
   return (
     <>
-      <header><Header /></header>
-      <main>
-        <section id="Hero" className="Hero"><Hero /></section> 
-        <section id="About" className="About"><About /></section> 
-        <section id="Skills" className="Skills"><Skills /></section> 
-        <section id="Portfolio" className="Portfolio"><Portfolio /></section> 
-        <section id="Experience" className="Experience"><Experience /></section>
-        <section id="Contact" className="Contact">
-          <Contact />
-          <Footer />
-        </section>
-        
-      </main>
-      
+      <Header />
+
+      <section id="Hero" className="Hero">
+        <Hero />
+      </section>
+      <section id="About" className="About">
+        <About />
+      </section>
+      <section id="Skills" className="Skills">
+        <Skills />
+      </section>
+      <section id="Portfolio" className="Portfolio">
+        <Portfolio />
+      </section>
+      <section id="Experience" className="Experience">
+        <Experience />
+      </section>
+      <section id="Contact" className="Contact">
+        <Contact />
+        <Footer />
+      </section>
     </>
   );
 };

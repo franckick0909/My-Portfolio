@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from "./pages/Index/Index";
-import Error from "./pages/Error/Error";
+// import Error from "./pages/Error/Error";
 import Projet1 from "./pages/Projets/Projet1";
 import Projet2 from "./pages/Projets/Projet2";
 import Projet3 from "./pages/Projets/Projet3";
@@ -10,7 +10,7 @@ import Projet5 from "./pages/Projets/Projet5";
 import Projet6 from "./pages/Projets/Projet6";
 
 const App = () => {
-  return (
+  return ( 
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="projet5" element={<Projet5 />} />
         <Route path="projet6" element={<Projet6 />} />
 
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<Index />} />
       </Routes>
     </BrowserRouter>
   );

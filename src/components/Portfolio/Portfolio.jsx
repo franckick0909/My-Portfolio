@@ -233,7 +233,6 @@ const Portfolio = () => {
                         <Link to={item.link} className="projetLink btn btn-1">
                           Voir les projets <FaRocket />
                         </Link>
-                        {/* <Link to="/Error"/> */}
                       </div>
                     </div>
                   </div>

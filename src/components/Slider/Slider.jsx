@@ -39,7 +39,7 @@ const Slider = () => {
       initial: {
         opacity: 0,
         y: "-50%",
-        x: "60%",
+        x: "40%",         // changé de 60% à 40%
       },
       animate: {
         opacity: 1,
