@@ -15,10 +15,11 @@ import icon7 from "../../assets/icons/git.png";
 import icon8 from "../../assets/icons/nextjs.png";
 import icon9 from "../../assets/icons/nodejs.png";
 
-// import icons from "../../data/dataIcons.json";
-import { FaCalendarCheck, FaArrowLeft, FaArrowRight, FaLink, FaGithub } from "react-icons/fa6";
+import Footer from "../../components/Footer/Footer";
+import { FaCalendarCheck, FaArrowLeft, FaLink, FaGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import dataProjet from "../../data/dataProjets.json";
+
 const Projet1 = () => {
 
   const dataImage = [img1, img2, img3];
@@ -105,12 +106,19 @@ const Projet1 = () => {
               </span>
               Retour Home
             </Link>
-            <Link to="/Projet2" className="btn btn-2 btn-suivant">
-              Projet 2
-              <span>
-                <FaArrowRight />
-              </span>
-            </Link>
+
+            <div className="boutons">
+            {
+              dataProjet.map((item, index) => {
+                return (
+                  <Link to={item.link} key={index} className="btn btn-2 btn-suivant">
+                    {item.id}
+                  </Link>
+                );
+              })
+            }
+            </div>
+
           </div>
         </div>
 
@@ -201,7 +209,7 @@ const Projet1 = () => {
                 .filter((item) => item.id === 1)
                 .map((item, index) => {
                   return (
-                    <div key={index}>
+                    <div key={index} className="boutons">
                       <a
                         href={item.github}
                         target="_blank"
@@ -213,11 +221,11 @@ const Projet1 = () => {
                         </span>
                       </a>
                       <a
-                        href={item.link}
+                        href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-2 btn-projet">
-                        Voir le site
+                        Le site
                         <span>
                           <FaLink />
                         </span>
@@ -229,7 +237,11 @@ const Projet1 = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </section>
+
+    
   );
 };
 
