@@ -13,7 +13,7 @@ const Footer = () => {
 
         <div className="content__center">
           <Social />        
-          <p>© 2021 - All rights reserved</p>
+          <p>© 2024 - All rights reserved</p>
           
         </div>
 

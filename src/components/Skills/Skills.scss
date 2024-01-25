@@ -16,6 +16,15 @@
         background: $color-9;
         width: 100%;
         gap: 2rem;
+        padding: 4rem 0;
+
+        h1 {
+            font-size: clamp(6.5vh, 8vw, 30vh);
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $color-8;
+            font-family: $font-Rubik;
+        }
 
         .title {
             font-size: clamp(4rem, 5vw, 10rem);
@@ -42,6 +51,8 @@
                 grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
                 gap: 1rem;
                 width: 100%;
+                padding: 0 1rem;
+
 
 
                 .content__item {
@@ -50,7 +61,7 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    padding: 1.5rem;
+                    padding: 1.2rem;
                     border-radius: 5px;
                     background: radial-gradient(circle farthest-corner at 10% 20%, $color-1 0%, rgba(255, 255, 255, 0.1) 100.2%);
 
@@ -72,7 +83,7 @@
                         flex-direction: column;
                         align-items: center;
                         gap: 0.5rem;
-                        font-size: clamp(0.7rem, 2vw, 1.3rem);
+                        font-size: clamp(1rem, 2vw, 1.3rem);
                         font-weight: 600;
                         text-align: center;
                         color: $color-7;

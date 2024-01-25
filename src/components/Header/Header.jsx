@@ -26,9 +26,9 @@ const Header = () => {
         <motion.a
           href="#Contact"
           className="btn btn-1 linkContact"
-          initial={{ x: -300, opacity: 0 }}
-          transition={{ duration: 0.5, type: "spring", delay: 1, stiffness: 100, damping: 20 }}
-          animate={{ x: 0, opacity: 1 }}>
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut"}}
+          animate={{ y: 0, opacity: 1 }}>
           Contact Me
         </motion.a>
         <NavbarMobile />

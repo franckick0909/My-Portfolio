@@ -10,6 +10,7 @@ import food1 from "../../assets/img/projects/ohmyfood/ohmyfood1.png";
 import prime1 from "../../assets/img/projects/netprime/netprime1.png";
 import folio1 from "../../assets/img/projects/portfolio/portfolio1.png";
 import cv1 from "../../assets/img/projects/cv/CV.png";
+import Heading from "../Heading/Heading";
 
 
 const Portfolio = () => {
@@ -147,6 +148,8 @@ const Portfolio = () => {
 
     return (
       <motion.div className="container">
+<Heading text="Portfolio" />
+        
         <motion.div
           className="text"
           variants={animVariants}
@@ -216,15 +219,16 @@ const Portfolio = () => {
             variants={variants}
             initial="initial"
             whileInView="animate">
-            <motion.div className="card" variants={variants}>
+            <motion.div className="card" variants={variants}
+            >
               {filteredProjects.map((item, id) => (
                 <motion.div
                   className={`card__item ${
-                    Show ? "show" : ""
+                    Show ? "show" : "noshow"
                   }`}
                   key={id}
                   variants={variants}>
-                  <img
+                  <motion.img
                     src={item.image}
                     alt="Captures d'écrans de mes projets"
                   />

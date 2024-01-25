@@ -84,7 +84,7 @@ const Slider = () => {
         <Swiper
           className="mySwiper"
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          spaceBetween={10}
+          spaceBetween={50}
           slidesPerView={1}
           centeredSlides={true}
           autoplay={{
@@ -98,7 +98,14 @@ const Slider = () => {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}>
           <SwiperSlide className="swiperSlide">
-            <img src={img1} alt="coffee drink" className="img-swiper" />
+            <motion.img
+              src={img1}
+              alt="coffee drink"
+              className="img-swiper"
+              initial={{ scale: 1, rotate: 0 }}
+              whileInView={{ scale: 1.1, rotate: "2deg" }}
+              transition={{ duration: 5 }}
+            />
             <motion.div
               className="text"
               variants={textVariants}
@@ -117,7 +124,14 @@ const Slider = () => {
             </motion.div>
           </SwiperSlide>
           <SwiperSlide className="swiperSlide">
-            <img src={img2} alt="" className="img-swiper" />
+            <motion.img
+              src={img2}
+              alt=""
+              className="img-swiper"
+              initial={{ scale: 1, rotate: 0 }}
+              whileInView={{ scale: 1.1, rotate: "2deg" }}
+              transition={{ duration: 5 }}
+            />
             <motion.div
               className="text"
               variants={textVariants}
@@ -139,7 +153,14 @@ const Slider = () => {
             </motion.div>
           </SwiperSlide>
           <SwiperSlide className="swiperSlide">
-            <img src={img3} alt="" className="img-swiper" />
+            <motion.img
+              src={img3}
+              alt=""
+              className="img-swiper"
+              initial={{ scale: 1, rotate: 0 }}
+              whileInView={{ scale: 1.1, rotate: "2deg" }}
+              transition={{ duration: 5 }}
+            />
             <motion.div
               className="text"
               variants={textItemVariants}
@@ -151,7 +172,14 @@ const Slider = () => {
             </motion.div>
           </SwiperSlide>
           <SwiperSlide className="swiperSlide">
-            <img src={img4} alt="" className="img-swiper" />
+            <motion.img
+              src={img4}
+              alt=""
+              className="img-swiper"
+              initial={{ scale: 1, rotate: 0 }}
+              whileInView={{ scale: 1.1, rotate: "2deg" }}
+              transition={{ duration: 5 }}
+            />
             <div className="text">
               <motion.h3
                 initial={{ opacity: 0, scale: 0 }}

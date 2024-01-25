@@ -3,6 +3,7 @@ import hero from "../../assets/img/images/hero.png";
 import CV from "../../assets/pdf/CV Franck Chapelon.pdf";
 import { motion } from "framer-motion";
 import Social from "../Social/Social";
+import Heading from "../Heading/Heading";
 
 const About = () => {
   const variantsLeft = {
@@ -45,6 +46,7 @@ const About = () => {
     return (
       <motion.section id="About" className="About">
         <motion.div className="container">
+          <Heading text="About Me" />
 
           <motion.div
             className="left"
@@ -76,7 +78,7 @@ const About = () => {
                 whileTap={{ scale: 0.95 }}
               />
             </motion.div>
-            <motion.h2 >
+            <motion.h2>
               Hi, {"I'm"} <span className="name">Franck</span>
             </motion.h2>
 
@@ -89,9 +91,7 @@ const About = () => {
             whileInView="visible">
             <motion.div className="wrapper">
               <motion.h3 variants={variantsRight}>Frontend developer</motion.h3>
-              {/* <motion.h1 variants={variantsRight}>
-                Hi, {"I'm"} <span className="name">Franck</span>
-              </motion.h1> */}
+
               <motion.div className="description" variants={variantsRight}>
                 <motion.p variants={variantsRight}>
                   I am a frontend developer with 9 months of experience,

@@ -16,7 +16,7 @@ $color-4: #79031D;
 $color-5: #17E9E0;
 $color-6: #E0E5E9;
 $color-7: #ffffff;
-$color-8: rgba(255, 255, 255, 0.1);
+$color-8: #ffffff09;
 $color-9: rgba(0, 0, 0, 0.4);
 $color-10: rgba(23, 233, 223, 0.8);
 
@@ -115,7 +115,7 @@ section {
     width: 100%;
     border-radius: 4px;
     padding: 0 1rem;
-    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
     font-weight: 600;
     z-index: 2;
     cursor: pointer;

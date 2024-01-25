@@ -22,7 +22,7 @@
     }
 
     @media screen and (max-width: 768px) {
-        background-color: $color-4;
+        background-color: $color-9;
         box-shadow: none;
         padding: 0 1rem;
     }
@@ -35,6 +35,11 @@
 
         @media screen and (max-width: 768px) {
             margin-right: 5rem;
+            border: 1px solid $color-5;
+            background: transparent;
+            letter-spacing: 0;
+            line-height: 34px;
+            padding: 0 0.8rem;
         }
     }
 }

@@ -99,13 +99,10 @@ const Skills = () => {
   };
 
   return (
-
-      <motion.div className="container">
-
-
-        <motion.h2 className="title">Skills</motion.h2>
+    <motion.div className="container">
+<h1>My Skills</h1>
+      <motion.h2 className="title">Skills</motion.h2>
       <motion.h3 className="subtitle">My current skills</motion.h3>
-
 
       <motion.div
         className="content"
@@ -113,32 +110,37 @@ const Skills = () => {
         initial="initial"
         animate="animate">
         <motion.div
-        className="content-skills"
-        variants={imgVariants}
-        initial="hidden"
-        whileInView="visible">
+          className="content-skills"
+          variants={imgVariants}
+          initial="hidden"
+          whileInView="visible">
           {dataIcons.map((item, index) => {
             return (
               <motion.div
                 key={index}
                 className="content__item"
                 variants={imgVariants}>
-                    <motion.img src={item.icon} alt={item.title} whileHover={{ scale: 1.3 }} />
+                <motion.img
+                  src={item.icon}
+                  alt={item.title}
+                  whileHover={{ scale: 1.3 }}
+                />
                 <motion.a
                   href={item.href}
                   className="url"
                   target="_blank"
                   rel="noopener noreferrer">
-                        {item.title}
-                        <span><FaLink /></span>         
+                  {item.title}
+                  <span>
+                    <FaLink />
+                  </span>
                 </motion.a>
-
               </motion.div>
             );
           })}
         </motion.div>
-        </motion.div>
       </motion.div>
+    </motion.div>
   );
 };
 

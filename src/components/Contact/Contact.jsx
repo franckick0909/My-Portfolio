@@ -2,6 +2,7 @@ import "./Contact.scss";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaAt, FaPhoneFlip, FaAddressCard } from "react-icons/fa6";
+import Heading from "../Heading/Heading";
 
 const Contact = () => {
     const ref = useRef();
@@ -31,6 +32,8 @@ const Contact = () => {
       variants={variants}
       initial="initial"
       whileInView="animate">
+      
+      <Heading text="Contact" />
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>{"Let's"} work together</motion.h1>
         <motion.div className="item" variants={variants}>

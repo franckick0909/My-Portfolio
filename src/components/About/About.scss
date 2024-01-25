@@ -2,6 +2,7 @@
 
 .About {
     width: 100%;
+    position: relative;
     
     .container {
         max-width: 1440px;
@@ -90,7 +91,7 @@
             }
 
             h2 {
-                font-size: clamp(1.5rem, 5vw, 3rem);
+                font-size: clamp(1.9rem, 5vw, 3rem);
                 font-weight: 500;
                 color: $color-3;
                 font-family: $font-Whisper;
@@ -119,13 +120,13 @@
                 border-radius: 12px;
 
                 h3 {
-                    font-size: clamp(1rem, 5vw, 1.5rem);
+                    font-size: clamp(1.3rem, 5vw, 1.6rem);
                     font-weight: 600;
                     color: $color-5;
                 }
 
                 .description {
-                    font-size: clamp(0.8rem, 3vw, 1.1rem);
+                    font-size: clamp(0.95rem, 3vw, 1.1rem);
                     font-weight: 200;
                     color: $color-6;
                     text-align: justify;
@@ -187,13 +188,13 @@
                                 }
 
                                 p {
-                                    font-size: clamp(0.8rem, 3vw, 1.1rem);
+                                    font-size: clamp(0.95rem, 3vw, 1.1rem);
                                     font-weight: 400;
                                     color: $color-3;
                                 }
 
                                 span {
-                                    font-size: clamp(0.8rem, 3vw, 1.1rem);
+                                    font-size: clamp(0.95rem, 3vw, 1.1rem);
                                     font-weight: 400;
                                     color: $color-7;
                                 }

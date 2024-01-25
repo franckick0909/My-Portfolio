@@ -4,6 +4,7 @@ import icon2 from "../../assets/icons/pinceau.png";
 import icon3 from "../../assets/icons/OpenClassrooms.png";
 import icon4 from "../../assets/icons/cropped-logo.png";
 import { motion } from "framer-motion";
+import Heading from "../Heading/Heading";
 
 const Experience = () => {
 
@@ -26,6 +27,11 @@ const Experience = () => {
 
   return (
     <motion.div className="container">
+
+      <Heading text="Experience" />
+      
+      <h1>Expérience</h1>
+
       <motion.div
         className="timeline"
         variants={variants}
