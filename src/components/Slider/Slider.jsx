@@ -5,6 +5,7 @@ import img3 from "../../assets/img/images/img3.jpg";
 import img4 from "../../assets/img/images/img4.jpeg";
 import scroll from "../../assets/img/images/scroll.png";
 import { motion } from "framer-motion";
+import Social from "../Social/Social";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -103,6 +104,7 @@ const Slider = () => {
               variants={textVariants}
               initial="initial"
               whileInView="animate">
+              <Social />
               <motion.h2 className="name">FRANCK CHAPELON</motion.h2>
               <motion.img
                 src={scroll}

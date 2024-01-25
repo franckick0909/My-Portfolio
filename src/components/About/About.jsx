@@ -2,6 +2,7 @@ import "./About.scss";
 import hero from "../../assets/img/images/hero.png";
 import CV from "../../assets/pdf/CV Franck Chapelon.pdf";
 import { motion } from "framer-motion";
+import Social from "../Social/Social";
 
 const About = () => {
   const variantsLeft = {
@@ -78,6 +79,8 @@ const About = () => {
             <motion.h2 >
               Hi, {"I'm"} <span className="name">Franck</span>
             </motion.h2>
+
+            <Social />
           </motion.div>
           <motion.div
             className="right"

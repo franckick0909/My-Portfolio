@@ -66,7 +66,7 @@ const socialVariants = {
         <motion.div className="social"
           variants={socialVariants}
           initial="initial"
-          animate="animate">
+          whileInView="animate">
             {
                 social.map((social) => (
                     <motion.a

@@ -21,7 +21,7 @@ const Portfolio = () => {
       name: "Sophie Bluel",
       image: sophie1,
       category: "cat2",
-      link: "/Projet1",
+      link: "My-Portfolio/Projet1",
       github:
         "https://github.com/franckick0909/Portfolio-architecte-Sophie-Bluel",
       url: "https://franckick0909.github.io/Portfolio-architecte-Sophie-Bluel/",
@@ -31,6 +31,7 @@ const Portfolio = () => {
       name: "Kasa",
       image: kasa1,
       category: "cat3",
+      link: "My-Portfolio/Projet2",
       github: "https://github.com/franckick0909/kasa-react",
       url: "https://franckick0909.github.io/kasa-react/",
     },
@@ -39,7 +40,7 @@ const Portfolio = () => {
       name: "Ohmyfood",
       image: food1,
       category: "cat1",
-      link: "/Projet3",
+      link: "My-Portfolio/Projet3",
       github: "https://github.com/franckick0909/OhMyFood",
       url: "https://franckick0909.github.io/OhMyFood/",
     },
@@ -48,7 +49,7 @@ const Portfolio = () => {
       name: "NetPrime",
       image: prime1,
       category: "cat2",
-      link: "/Projet4",
+      link: "My-Portfolio/Projet4",
       github: "https://github.com/franckick0909/NetPrime",
       url: "https://franckick0909.github.io/NetPrime/",
     },
@@ -57,7 +58,7 @@ const Portfolio = () => {
       name: "Portfolio",
       image: folio1,
       category: "cat2",
-      link: "/Projet5",
+      link: "My-Portfolio/Projet5",
       github: "https://github.com/franckick0909/Portfolio2",
       url: "https://franckick0909.github.io/Portfolio2/",
     },
@@ -66,7 +67,7 @@ const Portfolio = () => {
       name: "CV",
       image: cv1,
       category: "cat1",
-      link: "/Projet6",
+      link: "My-Portfolio/Projet6",
       github: "https://github.com/franckick0909/CV",
       url: "https://franckick0909.github.io/CV/",
     },
@@ -218,7 +219,9 @@ const Portfolio = () => {
             <motion.div className="card" variants={variants}>
               {filteredProjects.map((item, id) => (
                 <motion.div
-                  className={`card__item ${Show ? "show" : ""}`}
+                  className={`card__item ${
+                    Show ? "show" : ""
+                  }`}
                   key={id}
                   variants={variants}>
                   <img

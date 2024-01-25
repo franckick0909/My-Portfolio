@@ -82,15 +82,10 @@
 
             .scroll {
                 display: block;
-                width: 10%;
                 position: absolute;
-                bottom: 20%;
-                left: 50%;
-                transform: translate(-20%, -50%);
-
-                @media screen and (max-width: 768px) {
-                    bottom: 30%;
-                }
+                bottom: 0;
+                width: auto;
+                text-align: center;
             }
 
             .buttons {
