@@ -84,7 +84,7 @@ const Slider = () => {
         <Swiper
           className="mySwiper"
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          spaceBetween={50}
+          spaceBetween={40}
           slidesPerView={1}
           centeredSlides={true}
           autoplay={{
@@ -126,7 +126,7 @@ const Slider = () => {
           <SwiperSlide className="swiperSlide">
             <motion.img
               src={img2}
-              alt=""
+              alt="portable computer"
               className="img-swiper"
               initial={{ scale: 1, rotate: 0 }}
               whileInView={{ scale: 1.1, rotate: "2deg" }}
@@ -155,7 +155,7 @@ const Slider = () => {
           <SwiperSlide className="swiperSlide">
             <motion.img
               src={img3}
-              alt=""
+              alt="portable computer"
               className="img-swiper"
               initial={{ scale: 1, rotate: 0 }}
               whileInView={{ scale: 1.1, rotate: "2deg" }}
@@ -174,7 +174,7 @@ const Slider = () => {
           <SwiperSlide className="swiperSlide">
             <motion.img
               src={img4}
-              alt=""
+              alt="earth planet code"
               className="img-swiper"
               initial={{ scale: 1, rotate: 0 }}
               whileInView={{ scale: 1.1, rotate: "2deg" }}

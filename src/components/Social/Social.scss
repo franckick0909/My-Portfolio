@@ -5,7 +5,8 @@
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
-    padding: 1rem 0;
+    padding: 2rem;
+    overflow: hidden;
 
     a {
         display: flex;
@@ -20,7 +21,7 @@
         &:hover {
             color: $color-7;
             background: $color-4;
-            box-shadow: 0 0 2rem $color-7;
+            box-shadow: 0 0 1rem $color-7;
         }
     }
 }

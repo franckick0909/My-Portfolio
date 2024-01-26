@@ -1,8 +1,11 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/sophie bluel/sophie bluel1.png";
-import img2 from "../../assets/img/projects/sophie bluel/sophie bluel2.png";
-import img3 from "../../assets/img/projects/sophie bluel/sophie bluel3.png";
-import img4 from "../../assets/img/projects/sophie bluel/sophie bluel4.png";
+import img1 from "../../assets/img/projects/sophie bluel/sophie bluel5.png";
+import img2 from "../../assets/img/projects/sophie bluel/sophie bluel6.png";
+import img3 from "../../assets/img/projects/sophie bluel/sophie bluel7.png";
+import img4 from "../../assets/img/projects/sophie bluel/sophie bluel8.png";
+import img5 from "../../assets/img/projects/sophie bluel/sophie bluel9.png";
+import img6 from "../../assets/img/projects/sophie bluel/sophie bluel10.png";
+import img7 from "../../assets/img/projects/sophie bluel/sophie bluel11.png";
 import logo from "../../assets/icons/sophie_Logo.png";
 
 import icon1 from "../../assets/icons/html5.png";
@@ -28,7 +31,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const Projet1 = () => {
-  const dataImage = [img1, img2, img3, img4];
+  const dataImage = [img1, img2, img3, img4, img5, img6, img7];
 
   const dataIcons = [
     {
@@ -186,12 +189,11 @@ const Projet1 = () => {
             {dataImage.map((item, index) => {
               return (
                 <motion.img
+                  loading="lazy"
                   key={index}
                   src={item}
                   alt="images du projet Sophie Bluel"
                   variants={xVariantsLeft}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
                 />
               );
             })}

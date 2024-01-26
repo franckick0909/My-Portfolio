@@ -10,8 +10,6 @@ import food1 from "../../assets/img/projects/ohmyfood/ohmyfood1.png";
 import prime1 from "../../assets/img/projects/netprime/netprime1.png";
 import folio1 from "../../assets/img/projects/portfolio/portfolio1.png";
 import cv1 from "../../assets/img/projects/cv/CV.png";
-import Heading from "../Heading/Heading";
-
 
 const Portfolio = () => {
 
@@ -148,7 +146,7 @@ const Portfolio = () => {
 
     return (
       <motion.div className="container">
-<Heading text="Portfolio" />
+<h1>Projects</h1>
         
         <motion.div
           className="text"

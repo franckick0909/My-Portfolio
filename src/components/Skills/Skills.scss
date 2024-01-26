@@ -18,13 +18,16 @@
         gap: 2rem;
         padding: 4rem 0;
 
-        h1 {
+    h1 {
             font-size: clamp(6.5vh, 8vw, 30vh);
             font-weight: bold;
             text-transform: uppercase;
             color: $color-8;
             font-family: $font-Rubik;
+            margin-bottom: 3rem;
+            text-align: center;
         }
+        
 
         .title {
             font-size: clamp(4rem, 5vw, 10rem);

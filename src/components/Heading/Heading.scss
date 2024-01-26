@@ -1,16 +1,12 @@
 @import "../../styles/App";
 
 .heading {
-    position: absolute;
-    top: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    font-size: clamp(8vh, 8vw, 30vh);
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $color-8;
-    font-family: $font-Rubik;
-    z-index: -1;
-    margin: auto;
+    .heading {
+        font-size: clamp(6.5vh, 8vw, 30vh);
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $color-8;
+        font-family: $font-Rubik;
+        margin-bottom: 3rem;
+    }
 }

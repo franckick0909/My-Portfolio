@@ -8,14 +8,15 @@
 
 .link {
     font-size: clamp(1.2rem, 3vw, 2rem);
+    font-family: $font-Syne;
     font-weight: 600;
-    color: $color-1;
+    color: $color-7;
     display: flex;
     transition: color 0.3s ease;
 
 
     &.active {
-        color: $color-4;
+        color: $color-6;
 
         &:hover {
             color: $color-3;
@@ -23,6 +24,6 @@
     }
 
     &:hover {
-        color: $color-3;
+        color: $color-5;
     }
 }

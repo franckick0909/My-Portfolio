@@ -5,10 +5,10 @@ const Heading = ({ text }) => {
 
 
   return (
-    <div
+    <h1
       className="heading">
       {text}
-    </div>
+    </h1>
   );
 };
 Heading.propTypes = {
