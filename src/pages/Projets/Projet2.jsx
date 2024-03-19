@@ -1,8 +1,8 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/kasa/kasa1.png";
-import img2 from "../../assets/img/projects/kasa/kasa2.png";
-import img3 from "../../assets/img/projects/kasa/kasa3.png";
-import img4 from "../../assets/img/projects/kasa/kasa4.png";
+import img1 from "../../assets/img/projects/kasa/kasa1.webp";
+import img2 from "../../assets/img/projects/kasa/kasa2.webp";
+import img3 from "../../assets/img/projects/kasa/kasa3.webp";
+import img4 from "../../assets/img/projects/kasa/kasa4.webp";
 import logo from "../../assets/img/projects/kasa/LOGO.svg";
 
 import icon1 from "../../assets/icons/html5.png";

@@ -1,8 +1,8 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/portfolio/portfolio1.png";
-import img2 from "../../assets/img/projects/portfolio/portfolio2.png";
-import img3 from "../../assets/img/projects/portfolio/portfolio3.png";
-import img4 from "../../assets/img/projects/portfolio/portfolio4.png";
+import img1 from "../../assets/img/projects/portfolio/portfolio1.webp";
+import img2 from "../../assets/img/projects/portfolio/portfolio2.webp";
+import img3 from "../../assets/img/projects/portfolio/portfolio3.webp";
+import img4 from "../../assets/img/projects/portfolio/portfolio4.webp";
 
 
 import icon1 from "../../assets/icons/html5.png";

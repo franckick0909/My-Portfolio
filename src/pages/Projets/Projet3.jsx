@@ -1,8 +1,8 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/ohmyfood/ohmyfood1.png";
-import img2 from "../../assets/img/projects/ohmyfood/ohmyfood2.png";
-import img3 from "../../assets/img/projects/ohmyfood/ohmyfood3.png";
-import img4 from "../../assets/img/projects/ohmyfood/ohmyfood4.png";
+import img1 from "../../assets/img/projects/ohmyfood/ohmyfood1.webp";
+import img2 from "../../assets/img/projects/ohmyfood/ohmyfood2.webp";
+import img3 from "../../assets/img/projects/ohmyfood/ohmyfood3.webp";
+import img4 from "../../assets/img/projects/ohmyfood/ohmyfood4.webp";
 
 import icon1 from "../../assets/icons/html5.png";
 import icon2 from "../../assets/icons/css3.png";

@@ -1,5 +1,5 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/cv/CV.png";
+import img1 from "../../assets/img/projects/cv/CV.webp";
 
 
 import icon1 from "../../assets/icons/html5.png";

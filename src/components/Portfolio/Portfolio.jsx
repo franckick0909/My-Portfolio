@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRocket } from "react-icons/fa6";
 
-import sophie1 from "../../assets/img/projects/sophie bluel/sophie bluel1.png";
-import kasa1 from "../../assets/img/projects/kasa/kasa1.png";
-import food1 from "../../assets/img/projects/ohmyfood/ohmyfood1.png";
-import prime1 from "../../assets/img/projects/netprime/netprime1.png";
-import folio1 from "../../assets/img/projects/portfolio/portfolio1.png";
-import cv1 from "../../assets/img/projects/cv/CV.png";
+import sophie1 from "../../assets/img/projects/sophie bluel/sophie bluel1.webp";
+import kasa1 from "../../assets/img/projects/kasa/kasa1.webp";
+import food1 from "../../assets/img/projects/ohmyfood/ohmyfood1.webp";
+import prime1 from "../../assets/img/projects/netprime/netprime1.webp";
+import folio1 from "../../assets/img/projects/portfolio/portfolio1.webp";
+import cv1 from "../../assets/img/projects/cv/CV.webp";
 
 const Portfolio = () => {
 

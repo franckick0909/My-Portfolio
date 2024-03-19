@@ -1,11 +1,11 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/sophie bluel/sophie bluel5.png";
-import img2 from "../../assets/img/projects/sophie bluel/sophie bluel6.png";
-import img3 from "../../assets/img/projects/sophie bluel/sophie bluel7.png";
-import img4 from "../../assets/img/projects/sophie bluel/sophie bluel8.png";
-import img5 from "../../assets/img/projects/sophie bluel/sophie bluel9.png";
-import img6 from "../../assets/img/projects/sophie bluel/sophie bluel10.png";
-import img7 from "../../assets/img/projects/sophie bluel/sophie bluel11.png";
+import img1 from "../../assets/img/projects/sophie bluel/sophie bluel5.webp";
+import img2 from "../../assets/img/projects/sophie bluel/sophie bluel6.webp";
+import img3 from "../../assets/img/projects/sophie bluel/sophie bluel7.webp";
+import img4 from "../../assets/img/projects/sophie bluel/sophie bluel8.webp";
+import img5 from "../../assets/img/projects/sophie bluel/sophie bluel9.webp";
+import img6 from "../../assets/img/projects/sophie bluel/sophie bluel10.webp";
+import img7 from "../../assets/img/projects/sophie bluel/sophie bluel11.webp";
 import logo from "../../assets/icons/sophie_Logo.png";
 
 import icon1 from "../../assets/icons/html5.png";

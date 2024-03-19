@@ -1,5 +1,5 @@
 import "./About.scss";
-import hero from "../../assets/img/images/hero.png";
+import hero from "../../assets/img/images/hero.webp";
 import CV from "../../assets/pdf/CV Franck Chapelon.pdf";
 import { motion } from "framer-motion";
 import Social from "../Social/Social";
@@ -211,7 +211,7 @@ const About = () => {
               </motion.table>
             </motion.div>
             <motion.div className="buttons" variants={variantsRight}>
-              <motion.a href="#contact" className="btn btn-1">
+              <motion.a href="#Contact" className="btn btn-1">
                 Contact Me
               </motion.a>
               <motion.a href={CV} download className="btn btn-2">

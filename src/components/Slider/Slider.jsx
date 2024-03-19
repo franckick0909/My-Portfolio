@@ -1,8 +1,8 @@
 import "./Slider.scss";
-import img1 from "../../assets/img/images/img1.jpg";
-import img2 from "../../assets/img/images/img2.jpg";
-import img3 from "../../assets/img/images/img3.jpg";
-import img4 from "../../assets/img/images/img4.jpeg";
+import img1 from "../../assets/img/images/img1.webp";
+import img2 from "../../assets/img/images/img2.webp";
+import img3 from "../../assets/img/images/img3.webp";
+import img4 from "../../assets/img/images/img4.webp";
 import scroll from "../../assets/img/images/scroll.png";
 import { motion } from "framer-motion";
 import Social from "../Social/Social";

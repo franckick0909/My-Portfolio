@@ -1,8 +1,8 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/netprime/netprime1.png";
-import img2 from "../../assets/img/projects/netprime/netprime2.png";
-import img3 from "../../assets/img/projects/netprime/netprime3.png";
-import img4 from "../../assets/img/projects/netprime/netprime4.png";
+import img1 from "../../assets/img/projects/netprime/netprime1.webp";
+import img2 from "../../assets/img/projects/netprime/netprime2.webp";
+import img3 from "../../assets/img/projects/netprime/netprime3.webp";
+import img4 from "../../assets/img/projects/netprime/netprime4.webp";
 
 import icon1 from "../../assets/icons/html5.png";
 import icon2 from "../../assets/icons/css3.png";
