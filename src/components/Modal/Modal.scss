@@ -1,0 +1,125 @@
+@import "../../styles/App.scss";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modal-content {
+        margin: 1rem;
+        background: $color-7;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .fuse {
+            max-width: 100px;
+            width: 100%;
+
+            .rocket {
+
+                max-width: 100px;
+                width: 100%;
+                color: $color-5;
+                filter: hue-rotate(0deg) saturate(100%);
+                filter: drop-shadow(0 0 15px $color-1);
+                transform: rotate(0deg);
+                animation: rotation 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards,
+                    hue 2s linear;
+            }
+
+            .rocketcasse{
+                max-width: 100px;
+                width: 100%;
+                color: $color-3;
+                filter: hue-rotate(0deg) saturate(100%);
+                filter: drop-shadow(0 0 15px $color-1);
+                transform: rotate(0deg);
+                animation: casse 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards,
+                    hue 2s linear;
+            }
+        }
+
+
+
+        .btn-modal{
+            max-width: max-content;
+        }
+    }
+}
+
+.rocket {
+    animation: rotation 0.5s ease-out forwards;
+}
+.rocketcasse {
+    animation: rotation 0.5s ease-out forwards;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    30% {
+        transform: rotate(-55deg) translateY(0);
+    }
+
+    80% {
+        transform: rotate(-45deg) translateY(0px);
+    }
+
+    100% {
+        transform: rotate(0deg) translateY(-150px);
+    }
+}
+
+
+@keyframes casse {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    30% {
+        transform: rotate(-55deg) translateY(0);
+    }
+
+    60% {
+        transform: rotate(-45deg) translateY(0px);
+    }
+
+    100%{
+        transform: rotate(120deg) translateY(-150px);
+    
+    }
+}
+
+@keyframes hue {
+    0% {
+        filter: hue-rotate(0deg) saturate(100%);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) saturate(100%);
+    }
+}
+
+.hidden{
+    transform: translateX(-100%);
+}
+
+.auto{
+    transform: translateX(0);
+}

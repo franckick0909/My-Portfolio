@@ -80,7 +80,7 @@ a {
 // }
 
 section {
-    scroll-snap-align: center;
+    // scroll-snap-align: center;
     min-height: 100dvh;
     overflow: hidden;
 }
@@ -124,6 +124,7 @@ section {
     font-weight: 600;
     z-index: 2;
     cursor: pointer;
+    border: none;
     box-shadow: 0 1px 5px $color-9;
     transition: all 0.3s ease;
 }

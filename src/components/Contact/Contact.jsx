@@ -2,13 +2,12 @@ import "./Contact.scss";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaAt, FaPhoneFlip, FaAddressCard } from "react-icons/fa6";
-import Heading from "../Heading/Heading";
+import Form from "../Form/Form"
 
 const Contact = () => {
-    const ref = useRef();
+  const ref = useRef();
 
-    const isInview = useInView(ref, { margin: "-100px" });
-    
+  const isInview = useInView(ref, { margin: "-100px" });
 
   const variants = {
     initial: {
@@ -32,7 +31,6 @@ const Contact = () => {
       variants={variants}
       initial="initial"
       whileInView="animate">
-
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>{"Let's"} work together</motion.h1>
         <motion.div className="item" variants={variants}>
@@ -86,17 +84,7 @@ const Contact = () => {
             </g>
           </svg>
         </motion.div>
-        <motion.form
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 3, duration: 1 }}>
-          <input type="text" required placeholder="Name" name="name"/>
-          <input type="email" required placeholder="Email" name="email"/>
-          <textarea rows={8} placeholder="Message" name="message"/>
-          <button type="submit" className="btn btn-1" >Submit</button>
-
-                
-        </motion.form>
+        <Form />
       </div>
     </motion.div>
   );

@@ -87,43 +87,44 @@
                 z-index: -1;
             }
 
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 1.25rem;
-                z-index: 5;
+            // form {
+            //     display: flex;
+            //     flex-direction: column;
+            //     gap: 1.25rem;
+            //     z-index: 5;
 
-                // input {
 
-                //     &:valid {
-                //         border: 1px solid green;
-                //     }
-                // }
+            //     // input {
 
-                input,
-                textarea {
-                    padding: 1.25rem;
-                    background: $color-1;
-                    border: 1px solid $color-6;
-                    color: $color-7;
-                    border-radius: 4px;
-                    outline-color: $color-10;
-                    font-size: clamp(0.95rem, 3vw, 1.1rem);
+            //     //     &:valid {
+            //     //         border: 1px solid green;
+            //     //     }
+            //     // }
 
-                    &::placeholder {
-                        color: $color-6;
-                        font-size: clamp(0.9rem, 3vw, 1rem);
-                    }
-                }
+            //     input,
+            //     textarea {
+            //         padding: 1.25rem;
+            //         background: $color-1;
+            //         border: 1px solid $color-6;
+            //         color: $color-7;
+            //         border-radius: 4px;
+            //         outline-color: $color-10;
+            //         font-size: clamp(0.95rem, 3vw, 1.1rem);
 
-                button {
-                    padding: 1rem;
-                    border: none;
-                    font-weight: 500;
-                    font-size: clamp(1rem, 3vw, 1.3rem);
-                    letter-spacing: 5px;
-                }
-            }
+            //         &::placeholder {
+            //             color: $color-6;
+            //             font-size: clamp(0.9rem, 3vw, 1rem);
+            //         }
+            //     }
+
+            //     button {
+            //         padding: 1rem;
+            //         border: none;
+            //         font-weight: 500;
+            //         font-size: clamp(1rem, 3vw, 1.3rem);
+            //         letter-spacing: 5px;
+            //     }
+            // }
         }
     }
 }
