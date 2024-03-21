@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/My-Portfolio/projet5" element={<Projet5 />} />
         <Route path="/My-Portfolio/projet6" element={<Projet6 />} />
 
-        <Route path="*" element={<Index />} />
+        <Route path="/*" element={<Index />} />
       </Routes>
     
     </BrowserRouter>

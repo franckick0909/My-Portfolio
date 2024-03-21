@@ -5,7 +5,7 @@ const Logo = () => {
     return (
       <>
         <motion.a
-          href="#hero"
+          href="/"
           className="logo"
           initial={{ opacity: 0, scale: 0, y: -100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
