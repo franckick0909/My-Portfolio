@@ -2,13 +2,15 @@ import "./Form.scss";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import Modal from "../Modal/Modal";
+import { FaRocket } from "react-icons/fa6";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-    const [showModal, setShowModal] = useState(false);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalError, setModalError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,13 +26,16 @@ const Form = () => {
       message: message,
     };
 
+
     emailjs
       .send(serviceID, templateID, templateParams, publicKey)
       .then((response) => {
         if (response.status === 200) {
-            alert("Message sent successfully", response);
-            <Modal succes="Message sent successfully" />;
-            setShowModal(true);
+          // alert("Message sent successfully", response);
+          handleOpenModal();
+        } else {
+          alert("Something went wrong, please try again later", response);
+          handleOpenModalError();
         }
 
         setName("");
@@ -39,52 +44,109 @@ const Form = () => {
       })
       .catch((error) => {
         alert("Something went wrong, please try again later", error);
-        <Modal error="Something went wrong, please try again later" />;
+        handleOpenModalError();
       });
   };
 
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    document.querySelector(".modal").exit();
+  };
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+  const handleCloseModalError = () => {
+    setModalError(false);
+    document.querySelector(".modal").exit();
+  };
+  const handleOpenModalError = () => {
+    setModalError(true);
+  };
+  
   return (
-    <motion.form
-      onSubmit={handleSubmit}
-      className="formulaire"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: 3, duration: 1 }}>
-      <div className="input-wrapper">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="message">Message</label>
-        <textarea
-          rows={8}
-          id="message"
-          name="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-      </div>
+    <>
+      <motion.form
+        onSubmit={handleSubmit}
+        className="formulaire"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 3, duration: 1 }}>
+        <div className="input-wrapper">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="message">Message</label>
+          <textarea
+            rows={8}
+            id="message"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+        </div>
 
-      <button type="submit" className="btn btn-1">
-        Send
-      </button>
-    </motion.form>
+        <button type="submit" className="btn btn-1">
+          Send
+        </button>
+      </motion.form>
+
+      {modalOpen && (
+        <motion.div
+          className="modal"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100, transition: { duration: 0.3 } }}>
+          <div className="modal-content">
+            <div className="fuse">
+              <FaRocket className="rocket" />
+            </div>
+            <h2 className="succes">Message envoyé avec succès</h2>
+            <button onClick={handleCloseModal} className="btn btn-1 btn-modal">
+              Close Modal
+            </button>
+          </div>
+        </motion.div>
+      )}
+
+      {modalError && (
+        <motion.div
+          className="modal"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100, transition: { duration: 0.3 } }}>
+          <div className="modal-content">
+            <div className="fuse">
+              <FaRocket className="rocketcasse" />
+            </div>
+            <h2 className="error">
+              Une erreur est survenue, veuillez réessayer plus tard
+            </h2>
+            <button
+              onClick={handleCloseModalError}
+              className="btn btn-1 btn-modal">
+              Close Modal
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </>
   );
 };
 
