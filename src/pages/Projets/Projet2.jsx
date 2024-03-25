@@ -182,7 +182,7 @@ const Projet2 = () => {
                   src={item}
                   alt="images du projet Kasa"
                   variants={xVariantsLeft}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.3 }}
                   transition={{ duration: 0.2 }}
                 />
               );

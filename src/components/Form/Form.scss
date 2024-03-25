@@ -3,40 +3,142 @@
 .formulaire {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    gap: 1rem;
+    width: 100%;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: $color-7;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+        legend {
+            font-size: clamp(3rem, 5vw, 7rem);
+            transform: rotate(-30deg);
+            color: $color-5;
+            margin-left: 1rem;
+            filter: drop-shadow(0 0 15px $color-1);
+        }
+    }
 
     .input-wrapper {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-bottom: 2px solid $color-9;
+        margin: 20px 0;
+
+
+        &span::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: calc(100% - 2px);
+            width: 0;
+            height: 2px;
+            background: $color-5;
+            transition: 0.3s ease-in-out;
+        }
 
         label {
-            font-size: 1.1rem;
-            margin-bottom: 0.2rem;
-            color: $color-5;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            color: $color-9;
+            pointer-events: none;
+            transition: 0.2s ease-in-out;
+
+            &.text{
+                top: -15px;
+                transform: translateY(0);
+            }
         }
 
-        input,
-        textarea {
-            padding: 1.25rem;
-            background: $color-1;
-            border: 1px solid $color-6;
-            color: $color-7;
-            border-radius: 4px;
-            outline-color: $color-10;
+        input {
+            width: 100%;
+            padding: 0 5px;
+            height: 40px;
+            border: none;
+            color: $color-1;
+            outline: none;
             font-size: clamp(0.95rem, 3vw, 1.1rem);
+            background: none;
+        }
+
+        .textarea{
+            width: 100%;
+            padding: 0 ;
+            min-height: 100px;
+            border: none;
+            color: $color-1;
+            outline: none;
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            background: none;
+
+            &::placeholder{
+                color: $color-9;
+                padding: 0;
+                margin: 0;
+                font-size: clamp(0.95rem, 3vw, 1.2rem);
+                font-weight: 500;
+
+            }
+        }
+
+        input:focus~label,
+        input:valid~label {
+            top: -10px;
+            color: $color-4;
         }
     }
 
-    button {
-        padding: 1rem;
-        border: none;
-        font-weight: 500;
-        font-size: clamp(1rem, 3vw, 1.5rem);
-        letter-spacing: 5px;
-        border: none;
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 20px;
+
+        button {
+            line-height: 30px;
+            padding: 1rem;
+            border: none;
+            font-weight: 500;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            letter-spacing: 5px;
+            border: none;
+            background: $color-4;
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: $color-4;
+            }
+        }
     }
 }
+
+input[type="submit"] {
+    height: 40px;
+    width: 50%;
+    display: block;
+    background: $color-5;
+    border-radius: 1.5625rem;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: $color-1;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin: 1rem auto;
+    transition: 0.2s ease-in-out;
+}
+
 
 .modal {
     position: fixed;
@@ -63,7 +165,8 @@
         align-items: center;
         gap: 1rem;
 
-        .succes, .error{
+        .succes,
+        .error {
             color: $color-1;
             font-size: clamp(1rem, 3vw, 2rem);
             font-weight: 500;
@@ -96,6 +199,7 @@
                     hue 2s linear;
             }
         }
+
         .btn-modal {
             max-width: max-content;
         }

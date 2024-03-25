@@ -178,6 +178,8 @@ const Projet5 = () => {
                   src={item}
                   alt="images de mon portfolio #2"
                   variants={xVariantsLeft}
+                  whileHover={{ scale: 1.3 }}
+                  transition={{ duration: 0.2 }}
                 />
               );
             })}

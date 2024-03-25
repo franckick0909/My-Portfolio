@@ -2,12 +2,18 @@ import "./Form.scss";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { FaRocket } from "react-icons/fa6";
+import { FaRocket, FaShuttleSpace } from "react-icons/fa6";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const handleClearForm = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   const [modalOpen, setModalOpen] = useState(false);
   const [modalError, setModalError] = useState(false);
@@ -25,7 +31,6 @@ const Form = () => {
       to_name: "Franck",
       message: message,
     };
-
 
     emailjs
       .send(serviceID, templateID, templateParams, publicKey)
@@ -62,7 +67,7 @@ const Form = () => {
   const handleOpenModalError = () => {
     setModalError(true);
   };
-  
+
   return (
     <>
       <motion.form
@@ -71,40 +76,58 @@ const Form = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 3, duration: 1 }}>
-        <div className="input-wrapper">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="input-wrapper">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="input-wrapper">
-          <label htmlFor="message">Message</label>
-          <textarea
-            rows={8}
-            id="message"
-            name="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </div>
-
-        <button type="submit" className="btn btn-1">
-          Send
-        </button>
+        <fieldset>
+          <legend>
+            <FaShuttleSpace className="Space" />
+          </legend>
+          <div className="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <span></span>
+            <label htmlFor="name">Name :</label>
+          </div>
+          <div className="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              required
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <span></span>
+            <label htmlFor="email">Email :</label>
+          </div>
+          <div className="input-wrapper">
+            <textarea
+              className="textarea"
+              rows={8}
+              placeholder="Message:"
+              id="message"
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+          <div className="btn-group">
+            <button type="submit" className="btn btn-1">
+              Send
+            </button>
+            <button
+              type="reset"
+              value="reset Form"
+              onClick={() => handleClearForm()}
+              className="btn btn-1">
+              Clear
+            </button>
+          </div>
+        </fieldset>
       </motion.form>
 
       {modalOpen && (

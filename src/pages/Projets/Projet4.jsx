@@ -172,7 +172,14 @@ const Projet4 = () => {
           <motion.div className="image__content" variants={xVariantsLeft}>
             {dataImage.map((item, index) => {
               return (
-                <motion.img key={index} src={item} alt="images du projet NetPrime" variants={xVariantsLeft} />
+                <motion.img
+                  key={index}
+                  src={item}
+                  alt="images du projet NetPrime"
+                  variants={xVariantsLeft}
+                  whileHover={{ scale: 1.3 }}
+                  transition={{ duration: 0.2 }}
+                />
               );
             })}
           </motion.div>
