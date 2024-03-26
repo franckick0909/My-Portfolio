@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 const Logo = () => {
     return (
       <>
-        <motion.a
-          href="/"
+        <motion.div
           className="logo"
           initial={{ opacity: 0, scale: 0, y: -100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -16,7 +15,7 @@ const Logo = () => {
             delay: 0.1,
           }}>
           Fran<motion.span>Kick</motion.span>
-        </motion.a>
+        </motion.div>
       </>
     );
 };
