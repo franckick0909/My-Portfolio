@@ -1,0 +1,70 @@
+{
+  "btn_menu_contact": "Contáctame",
+  "slider_text1": {
+    "text1": "Desarrollador Frontend,",
+    "text2": "Web,",
+    "text3": "Freelancer",
+    "btn1": "Contratame",
+    "btn2": "Ver mi Trabajo"
+  },
+  "slider_text2": {
+    "text4": "Construyo & diseño interfaces web."
+  },
+  "slider_text3": {
+    "text5": "Soy un desarrollador web con sede en Aquitania, Francia. Me apasiona el diseño web y me encanta crear en todos los medios."
+  },
+  "navbar": {
+    "home": "Hogar",
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "portfolio": "portafolio",
+    "experience": "Experiencia"
+  },
+  "about": {
+    "h1": "Acerca de mí",
+    "h2": "Hola yo soy ",
+    "h3": "Desarrollador frontend",
+    "p1": "Soy desarrollador frontend con 9 meses de experiencia creando sitios web y aplicaciones web. Me especializo en JavaScript y ReactJS, que para mí son las mejores herramientas para un desarrollador Frontend.",
+    "p2": "Actualmente estoy buscando trabajo como desarrollador frontend.",
+    "p3": "Apasionado desde hace años por el sector TI y la creación de sitios web, me recapacité para desarrollarme profesionalmente en el ámbito del desarrollador web. Me gusta construir desde cero y hacer animaciones hermosas y fluidas con las nuevas tecnologías actuales.",
+    "span1": "Nombre ",
+    "span2": "Apellido ",
+    "span3": "Edad ",
+    "span4": "Nacionalidad ",
+    "span5": "Idiomas ",
+    "span6": "Ubicación ",
+    "span7": "Lanza libre ",
+    "btn3": "Contáctame",
+    "btn4": "Descargar CV"
+  },
+  "skills": {
+    "h1": "Mis habilidades",
+    "h2": "Habilidades",
+    "h3": "Mis habilidades actuales"
+  },
+  "portfolio": {
+    "h1": "proyectos",
+    "h2": "mi ultimo trabajo",
+    "p": "Aquí hay algunos proyectos de diseño en los que he trabajado recientemente. ¿Quieres ver más? ",
+    "p1": " Envíeme un correo electrónico.",
+    "btn": "Ver más"
+  },
+  "experience": "Experiencia",
+  "contact": {
+    "h1": "Trabajemos juntos",
+    "title1": "Correo electrónico",
+    "title2": "Dirección",
+    "title3": "Teléfono"
+  },
+  "form": {
+    "label1": "Nombre",
+    "label2": "Correo electrónico",
+    "label3": "Mensaje",
+    "btn1": "Enviar",
+    "btn2": "Cancelar",
+    "success": "Tu mensaje ha sido enviado exitosamente !",
+    "error": "Se produjo un error, ¡inténtelo nuevamente más tarde !"
+  },
+  "footer": "© 2024 Reservados todos los derechos. Diseñado por "
+
+}
