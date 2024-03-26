@@ -5,14 +5,20 @@
     flex-direction: column;
     width: 100%;
 
+
     fieldset {
         display: flex;
         flex-direction: column;
         width: 100%;
         padding: 1rem;
         border-radius: 1rem;
-        background: $color-7;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border: none;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4.4px);
+        -webkit-backdrop-filter: blur(4.4px);
+        border: 1px solid rgba(255, 255, 255, 0.27);
 
         legend {
             font-size: clamp(3rem, 5vw, 7rem);
@@ -29,7 +35,7 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        border-bottom: 2px solid $color-9;
+        border-bottom: 1px solid $color-6;
         margin: 20px 0;
 
 
@@ -39,8 +45,7 @@
             left: 0;
             top: calc(100% - 2px);
             width: 0;
-            height: 2px;
-            background: $color-5;
+            height: 1px;
             transition: 0.3s ease-in-out;
         }
 
@@ -50,51 +55,44 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: clamp(0.95rem, 3vw, 1.1rem);
-            color: $color-9;
+            color: $color-7;
             pointer-events: none;
             transition: 0.2s ease-in-out;
 
-            &.text{
+            &.text {
                 top: -15px;
                 transform: translateY(0);
             }
         }
 
-        input {
+        input,
+        textarea {
             width: 100%;
             padding: 0 5px;
             height: 40px;
             border: none;
-            color: $color-1;
+            color: $color-7;
             outline: none;
             font-size: clamp(0.95rem, 3vw, 1.1rem);
+            font-weight: 200;
             background: none;
+            font-family: $font-Syne;
         }
 
-        .textarea{
-            width: 100%;
-            padding: 0 ;
-            min-height: 100px;
-            border: none;
-            color: $color-1;
-            outline: none;
-            font-size: clamp(0.95rem, 3vw, 1.1rem);
-            background: none;
-
-            &::placeholder{
-                color: $color-9;
-                padding: 0;
-                margin: 0;
-                font-size: clamp(0.95rem, 3vw, 1.2rem);
-                font-weight: 500;
-
-            }
+        textarea {
+            min-height: 120px;
         }
 
         input:focus~label,
         input:valid~label {
             top: -10px;
-            color: $color-4;
+            color: $color-10;
+        }
+
+        textarea:focus~label,
+        textarea:valid~label {
+            top: -10px;
+            color: $color-10;
         }
     }
 
@@ -106,19 +104,11 @@
         margin-top: 20px;
 
         button {
-            line-height: 30px;
-            padding: 1rem;
-            border: none;
-            font-weight: 500;
+            padding: 7px 18px;
+            font-weight: 400;
             font-size: clamp(1rem, 3vw, 1.5rem);
-            letter-spacing: 5px;
-            border: none;
-            background: $color-4;
+            letter-spacing: 2px;
             transition: color 0.2s ease-in-out;
-
-            &:hover {
-                color: $color-4;
-            }
         }
     }
 }

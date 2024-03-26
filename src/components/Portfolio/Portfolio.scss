@@ -40,9 +40,14 @@
             .subtitle {
                 font-size: clamp(0.95rem, 3vw, 1.2rem);
                 font-weight: 400;
-                text-align: center;
-                color: $color-6;
+                text-align: justify;
+                color: $color-7;
                 max-width: 600px;
+
+                span{
+                    color: $color-3;
+                
+                };
             }
         }
 

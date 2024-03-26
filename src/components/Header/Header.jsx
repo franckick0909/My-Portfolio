@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 const Header = () => {
+  const { t} = useTranslation();
 
     const [bg, setBg] = useState(false);
 
@@ -23,13 +26,14 @@ const Header = () => {
       <header className={bg ? "header active" : "header"}>
         <Logo />
         <Navbar />
+        <LanguageSelector />
         <motion.a
           href="#Contact"
           className="btn btn-1 linkContact"
           initial={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut"}}
           animate={{ y: 0, opacity: 1 }}>
-          Contact Me
+          {t("btn_menu_contact")}
         </motion.a>
         <NavbarMobile />
       </header>

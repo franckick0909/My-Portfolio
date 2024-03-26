@@ -2,8 +2,12 @@ import Logo from "../Logo/Logo";
 import Social from "../Social/Social";
 import "./Footer.scss";
 import { FaAt, FaPhoneFlip, FaGhost, FaLocationDot } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+
+      const { t } = useTranslation();
+  
   return (
     <footer>
      <div className="content">
@@ -13,7 +17,7 @@ const Footer = () => {
 
         <div className="content__center">
           <Social />        
-          <p>© 2024 - All rights reserved</p>
+          <p>{t("footer")}<span>Franckick.</span></p>
           
         </div>
 

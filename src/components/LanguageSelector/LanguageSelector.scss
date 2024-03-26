@@ -1,0 +1,70 @@
+@import "../../styles/App.scss";
+
+.btn-container {
+    position: fixed;
+    top: 5rem;
+    right: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    z-index: 1000;
+    transform: translateX(0);
+    transition: 0.3s ease-in-out;
+
+    &.open {
+        transform: translateX(-2rem);
+
+    }
+    &.close {
+        transform: translateX(0);
+    }
+
+    .earth-icon {
+        font-size: 2rem;
+        color: $color-4;
+        filter: drop-shadow(0px 5px 7px #000000);
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        z-index: 1200;
+    }
+
+    .lang-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        border-radius: 4px;
+        transition: 0.3s ease-in-out;
+
+
+        .btn-lang {
+            max-width: max-content;
+            min-width: 5rem;
+            background-color: $color-1;
+            color: $color-5;
+            border: 1px solid transparent;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                border-color: $color-10;
+            }
+
+            &.selected {
+                background-color: $color-5;
+                color: #000;
+            }
+        }
+
+
+
+        // &:focus,
+        // &:focus-visible{
+        //     outline: 1px auto -webkit-focus-ring-color;
+        // }
+
+
+    }
+}

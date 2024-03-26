@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { FaRocket, FaShuttleSpace } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -68,6 +69,9 @@ const Form = () => {
     setModalError(true);
   };
 
+  const { t } = useTranslation();
+  const { label1, label2, label3, btn1, btn2, success, error } = t("form");
+
   return (
     <>
       <motion.form
@@ -90,7 +94,7 @@ const Form = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <span></span>
-            <label htmlFor="name">Name :</label>
+            <label htmlFor="name">{label1} :</label>
           </div>
           <div className="input-wrapper">
             <input
@@ -102,29 +106,32 @@ const Form = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <span></span>
-            <label htmlFor="email">Email :</label>
+            <label htmlFor="email">{label2} :</label>
           </div>
           <div className="input-wrapper">
             <textarea
               className="textarea"
-              rows={8}
-              placeholder="Message:"
+              rows={10}
+              cols={50}
               id="message"
+              required
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
+            <span></span>
+            <label htmlFor="name">{label3} :</label>
           </div>
           <div className="btn-group">
-            <button type="submit" className="btn btn-1">
-              Send
+            <button type="submit" className="btn btn-3">
+              {btn1}
             </button>
             <button
               type="reset"
               value="reset Form"
               onClick={() => handleClearForm()}
-              className="btn btn-1">
-              Clear
+              className="btn btn-4">
+              {btn2}
             </button>
           </div>
         </fieldset>
@@ -140,7 +147,7 @@ const Form = () => {
             <div className="fuse">
               <FaRocket className="rocket" />
             </div>
-            <h2 className="succes">Message envoyé avec succès</h2>
+            <h2 className="succes">{success}</h2>
             <button onClick={handleCloseModal} className="btn btn-1 btn-modal">
               Close Modal
             </button>
@@ -158,9 +165,7 @@ const Form = () => {
             <div className="fuse">
               <FaRocket className="rocketcasse" />
             </div>
-            <h2 className="error">
-              Une erreur est survenue, veuillez réessayer plus tard
-            </h2>
+            <h2 className="error">{error}</h2>
             <button
               onClick={handleCloseModalError}
               className="btn btn-1 btn-modal">

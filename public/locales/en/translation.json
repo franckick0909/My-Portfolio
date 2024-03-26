@@ -1,0 +1,69 @@
+{
+  "btn_menu_contact": "Contact Me",
+  "slider_text1": {
+    "text1": "Frontend Developer,",
+    "text2": "Web,",
+    "text3": "Freelancer",
+    "btn1": "Hire Me",
+    "btn2": "See My Work"
+  },
+  "slider_text2": {
+    "text4": "I build & design web interfaces."
+  },
+  "slider_text3": {
+    "text5": "I am a web developer based in Aquitaine, France. I am passionate about web design and I love creating in all media."
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "experience": "Experience"
+  },
+  "about": {
+    "h1": "About Me",
+    "h2": "Hi, I'm ",
+    "h3": "Frontend Developer",
+    "p1": "I'm a frontend developer with 9 months of experience building websites and web applications. I specialize in JavaScript and ReactJS, which for me are the best tools for a Frontend developer.",
+    "p2": "I am currently looking for a job as a frontend developer.",
+    "p3": "Passionate about the IT sector for years, and the creation of websites, I retrained in order to flourish professionally in the field of web developer. I like building from scratch, and making beautiful, fluid animations with current new technologies.",
+    "span1": "Name: ",
+    "span2": "Last Name ",
+    "span3": "Age ",
+    "span4": "Nationnality ",
+    "span5": "Languages ",
+    "span6": "Location ",
+    "span7": "Freelance ",
+    "btn3": "Contact Me",
+    "btn4": "Download CV"
+  },
+  "skills": {
+    "h1": "my skills",
+    "h2": "Skills",
+    "h3": "My current skills"
+  },
+  "portfolio": {
+    "h1": "projects",
+    "h2": "My latest works",
+    "p": "Here are a few design projects ve worked on recently. Want to see more?",
+    "p1": " Email me.",
+    "btn": "See more"
+  },
+  "experience": "Experience",
+  "contact": {
+    "h1": "Let's work together",
+    "title1": "Email",
+    "title2": "Adress",
+    "title3": "Phone"
+  },
+  "form": {
+    "label1": "Name",
+    "label2": "Email",
+    "label3": "Message",
+    "btn1": "Send",
+    "btn2": "Cancel",
+    "success": "Your message has been sent successfully !",
+    "error": "An error occurred, please try again later !"
+  },
+  "footer": "© 2024 All rights reserved. Conçu par "
+}

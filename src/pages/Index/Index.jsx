@@ -10,7 +10,8 @@ import "./Index.scss";
 
 const Index = () => {
   return (
-    <>
+    <div className="index">
+
       <Header />
 
       <section id="Hero" className="Hero">
@@ -32,7 +33,7 @@ const Index = () => {
         <Contact />
         <Footer />
       </section>
-    </>
+    </div>
   );
 };
 

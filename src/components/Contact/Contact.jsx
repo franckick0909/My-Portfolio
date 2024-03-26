@@ -1,8 +1,9 @@
 import "./Contact.scss";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaAt, FaPhoneFlip, FaAddressCard } from "react-icons/fa6";
+import { FaAt, FaPhoneFlip, FaLocationDot } from "react-icons/fa6";
 import Form from "../Form/Form"
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const ref = useRef();
@@ -24,6 +25,9 @@ const Contact = () => {
     },
   };
 
+      const { t } = useTranslation();
+      const { h1, title1, title2, title3 } = t("contact");
+
   return (
     <motion.div
       ref={ref}
@@ -32,9 +36,9 @@ const Contact = () => {
       initial="initial"
       whileInView="animate">
       <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>{"Let's"} work together</motion.h1>
+        <motion.h1 variants={variants}>{h1}</motion.h1>
         <motion.div className="item" variants={variants}>
-          <h2>Mail</h2>
+          <h2>{title1}</h2>
           <p className="row">
             <span>
               <FaAt />
@@ -43,16 +47,16 @@ const Contact = () => {
           </p>
         </motion.div>
         <motion.div className="item" variants={variants}>
-          <h2>Address</h2>
+          <h2>{title2}</h2>
           <p className="row">
             <span>
-              <FaAddressCard />
+              <FaLocationDot />
             </span>
-            24300 Savignac-de-Nontron (24), France{" "}
+            24300 Savignac-de-Nontron (24), France
           </p>
         </motion.div>
         <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
+          <h2>{title3}</h2>
           <p className="row">
             <span>
               <FaPhoneFlip />

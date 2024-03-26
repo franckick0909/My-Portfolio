@@ -1,0 +1,69 @@
+{
+  "btn_menu_contact": "Contactez-moi",
+  "slider_text1": {
+    "text1": "Développeur Frontend,",
+    "text2": "Web,",
+    "text3": "Freelancer",
+    "btn1": "Engagez Moi",
+    "btn2": "Voir mon Travail"
+  },
+  "slider_text2": {
+    "text4": "Je construis & design des interfaces Web."
+  },
+  "slider_text3": {
+    "text5": "Je suis un développeur web basé en Aquitaine, France. Je suis passionné par la conception Web et j'aime créer sur tous supports."
+  },
+  "navbar": {
+    "home": "Maison",
+    "about": "À propos",
+    "skills": "Compétences",
+    "portfolio": "Portefeuille",
+    "experience": "Expérience"
+  },
+  "about": {
+    "h1": "À propos de moi",
+    "h2": "Salut, je suis ",
+    "h3": "Développeur Frontend",
+    "p1": "Je suis un développeur frontend avec 9 mois d'expérience dans la création de sites et d'applications Web. Je me spécialise dans le langage JavaScript et ReactJS, qui sont pour moi les meilleurs outils pour un développeur Frontend.",
+    "p2": "Je suis actuellement à la recherche d'un emploi en tant que développeur frontend.",
+    "p3": "Passionné par le secteur informatique depuis des années, et par la création de sites internet, je me suis reconverti afin de m'épanouir professionnellement dans le domaine de développeur web. J'aime construire à partir de zéro et créer de belles animations fluides avec les nouvelles technologies actuelles.",
+    "span1": "Nom ",
+    "span2": "Prénom ",
+    "span3": "Age ",
+    "span4": "Nationnalité ",
+    "span5": "Langages ",
+    "span6": "Emplacement ",
+    "span7": "Freelance ",
+    "btn3": "Contactez moi",
+    "btn4": "Télécharger CV"
+  },
+  "skills": {
+    "h1": "mes compétences",
+    "h2": "Compétences",
+    "h3": "Mes compétences actuelles"
+  },
+  "portfolio": {
+    "h1": "projets",
+    "h2": "Mes derniers travaux",
+    "p": "Voici quelques projets de conception sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ? ",
+    "p1": " Envoyez moi un email.",
+    "btn": "En voir plus"
+  },
+  "experience": "Expérience",
+  "contact": {
+    "h1": "Travaillons ensemble",
+    "title1": "E-mail",
+    "title2": "Adresse",
+    "title3": "Téléphone"
+  },
+  "form": {
+    "label1": "Nom",
+    "label2": "E-mail",
+    "label3": "Message",
+    "btn1": "Envoyer",
+    "btn2": "Annuler",
+    "success": "Votre message a été envoyé avec succès !",
+    "error": "Une erreur s'est produite, veuillez réessayer plus tard !"
+  },
+  "footer": "© 2024 Tous droits réservés. Designed by "
+}

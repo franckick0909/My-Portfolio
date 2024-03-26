@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRocket } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 import sophie1 from "../../assets/img/projects/sophie bluel/sophie bluel1.webp";
 import kasa1 from "../../assets/img/projects/kasa/kasa1.webp";
@@ -142,21 +143,23 @@ const Portfolio = () => {
           delayChildren: 0.1,
         },
       },
-    };
+  };
+  
+      const { t } = useTranslation();
+      const { h1, h2, p, p1, btn } = t("portfolio");
 
     return (
       <motion.div className="container">
-<h1>Projects</h1>
+<h1>{h1}</h1>
         
         <motion.div
           className="text"
           variants={animVariants}
           initial="initial"
           whileInView="animate">
-          <motion.h2 variants={animVariants}>My latest work</motion.h2>
+          <motion.h2 variants={animVariants}>{h2}</motion.h2>
           <motion.p className="subtitle" variants={animVariants}>
-            Here are a few design projects ve worked on recently. Want to see
-            more? Email me.
+            {p}<span>{p1}</span>
           </motion.p>
         </motion.div>
 
@@ -236,7 +239,7 @@ const Portfolio = () => {
                       <div className="overlay__content">
                         <h2 className="projetName">{item.name}</h2>
                         <Link to={item.link} className="projetLink btn btn-1">
-                          Voir les projets <FaRocket />
+                          {btn} <FaRocket />
                         </Link>
                       </div>
                     </div>

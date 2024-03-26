@@ -1,6 +1,7 @@
 import "./Skills.scss";
 import { motion } from "framer-motion";
 import { FaLink } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 
 import icon1 from "../../assets/icons/html5.png";
@@ -98,11 +99,14 @@ const Skills = () => {
     },
   };
 
+    const { t } = useTranslation();
+    const { h1, h2, h3 } = t("skills");
+
   return (
     <motion.div className="container">
-<h1>My Skills</h1>
-      <motion.h2 className="title">Skills</motion.h2>
-      <motion.h3 className="subtitle">My current skills</motion.h3>
+       <h1>{h1}</h1>
+      <motion.h2 className="title">{h2}</motion.h2>
+      <motion.h3 className="subtitle">{h3}</motion.h3>
 
       <motion.div
         className="content"

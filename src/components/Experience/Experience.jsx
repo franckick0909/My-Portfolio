@@ -4,6 +4,7 @@ import icon2 from "../../assets/icons/pinceau.png";
 import icon3 from "../../assets/icons/OpenClassrooms.png";
 import icon4 from "../../assets/icons/cropped-logo.png";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Experience = () => {
 
@@ -22,16 +23,11 @@ const Experience = () => {
     },
   };
 
-  
+      const { t } = useTranslation();
 
   return (
     <motion.div className="container">
-
-      
-      
-      <h1>Expérience</h1>
-
-
+      <h1>{t("experience")}</h1>
 
       <motion.div
         className="timeline"
@@ -40,8 +36,7 @@ const Experience = () => {
         whileInView="animate">
         <motion.div
           className="timeline__container left-container"
-          variants={variants}
-        >
+          variants={variants}>
           <img src={icon1} alt="" />
           <div className="text">
             <h2>BAC PRO Mécanique Auto</h2>
