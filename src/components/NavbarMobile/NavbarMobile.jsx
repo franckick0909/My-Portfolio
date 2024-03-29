@@ -10,7 +10,7 @@ const NavbarMobile = () => {
 
   const circleVariants = {
     open: {
-      clipPath: "circle(800px at 100% -10%)",
+      clipPath: "circle(1200px at 100% -10%)",
       transition: {
         type: "spring",
         stiffness: 20,
@@ -18,7 +18,7 @@ const NavbarMobile = () => {
       },
     },
     close: {
-      clipPath: "circle(30px at 100% -10%)",
+      clipPath: "circle(10px at 100% -10%)",
       transition: {
         delay: 0.1,
         type: "spring",

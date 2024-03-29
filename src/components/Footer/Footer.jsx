@@ -3,6 +3,7 @@ import Social from "../Social/Social";
 import "./Footer.scss";
 import { FaAt, FaPhoneFlip, FaGhost, FaLocationDot } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 const Footer = () => {
 
@@ -13,10 +14,12 @@ const Footer = () => {
      <div className="content">
          <div className="content__logo">
           <Logo />
+          <LanguageSelector />
         </div>
 
         <div className="content__center">
-          <Social />        
+          <Social />       
+          
           <p>{t("footer")}<span>Franckick.</span></p>
           
         </div>

@@ -148,6 +148,7 @@ const Projet1 = () => {
 
 
   return (
+    <>
     <motion.section id="Projet1" className="Projet">
       <motion.div
         className="title"
@@ -182,7 +183,7 @@ const Projet1 = () => {
                 <FaArrowLeft />
               </span>
               Retour Home
-            </Link>
+              </Link>
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
@@ -364,7 +365,8 @@ const Projet1 = () => {
       </motion.div>
 
       <Footer />
-    </motion.section>
+      </motion.section>
+    </>
   );
 };
 

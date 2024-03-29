@@ -16,14 +16,18 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        width: 60vw;
-        height: 600px;
-        background: $color-1;
+        width: 50vw;
+        height: 90vh;
+        background: $color-4;
         position: fixed;
         top: 68px;
         right: 0;
         z-index: 10000;
         border-bottom-left-radius: 25px;
+
+        @media screen and (max-width: 768px) {
+            width: 70vw;
+        }
     }
 
     // .toggle {

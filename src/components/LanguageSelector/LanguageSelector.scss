@@ -1,70 +1,177 @@
 @import "../../styles/App.scss";
 
+// .btn-container {
+//     position: fixed;
+//     top: 5rem;
+//     right: 0.5rem;
+//     display: flex;
+//     align-items: flex-start;
+//     gap: 1rem;
+//     z-index: 1000;
+//     transform: translateX(0);
+//     transition: 0.3s ease-in-out;
+
+//     &.open {
+//         transform: translateX(-2rem);
+
+//     }
+//     &.close {
+//         transform: translateX(0);
+//     }
+
+//     .earth-icon {
+//         font-size: 2rem;
+//         color: $color-4;
+//         filter: drop-shadow(0px 5px 7px #000000);
+//         cursor: pointer;
+//         transition: 0.3s ease-in-out;
+//         z-index: 1200;
+//     }
+
+//     .lang-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         gap: 5px;
+//         border-radius: 4px;
+//         transition: 0.3s ease-in-out;
+
+
+//         .btn-lang {
+//             max-width: max-content;
+//             min-width: 5rem;
+//             background-color: $color-1;
+//             color: $color-5;
+//             border: 1px solid transparent;
+//             padding: 5px 10px;
+//             border-radius: 4px;
+//             cursor: pointer;
+//             transition: 0.3s ease-in-out;
+
+//             &:hover {
+//                 border-color: $color-10;
+//             }
+
+//             &.selected {
+//                 background-color: $color-5;
+//                 color: #000;
+//             }
+//         }
+
+
+
+//         // &:focus,
+//         // &:focus-visible{
+//         //     outline: 1px auto -webkit-focus-ring-color;
+//         // }
+
+
+//     }
+// }
+
+
 .btn-container {
-    position: fixed;
-    top: 5rem;
-    right: 0.5rem;
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    z-index: 1000;
-    transform: translateX(0);
-    transition: 0.3s ease-in-out;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    transition: 1s ease-in-out;
 
-    &.open {
-        transform: translateX(-2rem);
-
-    }
-    &.close {
-        transform: translateX(0);
+    @media screen and (max-width: 1200px) {
+        margin-right: 3rem;
     }
 
-    .earth-icon {
-        font-size: 2rem;
-        color: $color-4;
-        filter: drop-shadow(0px 5px 7px #000000);
-        cursor: pointer;
-        transition: 0.3s ease-in-out;
-        z-index: 1200;
+    .drop-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 150px;
+        width: 100%;
+        background: $color-6;
+        min-height: 1.9rem;
+        padding: 0 0.5rem;
+        border-radius: 4px;
+        box-shadow: 0 0 5px $color-9;
+        z-index: 1000;
+        transition: 1s ease-in-out;
+
+        .drop-globe {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+
+            .globe {
+                font-size: clamp(1rem, 1.5vw, 1.3rem);
+                color: $color-4;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+            }
+
+            .lang {
+                font-size: clamp(0.95rem, 1vw, 1rem);
+                color: $color-0;
+                font-weight: 600;
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        .drop-icon {
+            display: flex;
+
+            .chevron {
+                cursor: pointer;
+                font-size: 1.1rem;
+                color: $color-4;
+                transform: rotate(0deg);
+                transition: 0.2s ease-in-out;
+
+
+                &.arrowTop {
+                    transform: rotate(180deg);
+                    transition: 0.2s ease-in-out;
+                }
+            }
+        }
     }
 
     .lang-container {
+        position: absolute;
+        max-height: 500px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 5px;
+        min-width: 150px;
+        min-height: 1.9rem;
         border-radius: 4px;
-        transition: 0.3s ease-in-out;
+        // overflow: hidden;
 
-
-        .btn-lang {
-            max-width: max-content;
-            min-width: 5rem;
-            background-color: $color-1;
-            color: $color-5;
-            border: 1px solid transparent;
-            padding: 5px 10px;
-            border-radius: 4px;
+        .drop-element {
+            background: $color-6;
+            color: $color-0;
+            font-weight: 500;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: left;
+            list-style-type: none;
+            padding: 0.3rem;
+            width: 100%;
             cursor: pointer;
-            transition: 0.3s ease-in-out;
-
-            &:hover {
-                border-color: $color-10;
-            }
+            border-radius: 4px;
+            box-shadow: 0 0 5px $color-9;
 
             &.selected {
-                background-color: $color-5;
-                color: #000;
+                background: $color-10;
+                color: $color-0;
+            }
+
+            &:hover {
+                background: $color-9;
+                color: $color-5;
             }
         }
-
-
-
-        // &:focus,
-        // &:focus-visible{
-        //     outline: 1px auto -webkit-focus-ring-color;
-        // }
-
-
     }
+
 }

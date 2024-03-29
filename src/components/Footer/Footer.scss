@@ -20,6 +20,13 @@ footer{
             gap: 3rem;
         }
 
+        &__logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
         &__center{
             display: flex;
             justify-content: center;

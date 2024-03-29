@@ -12,18 +12,42 @@ $font-Shrikhand: 'Shrikhand', cursive;
 $font-Syne: 'Syne', cursive;
 
 
-// $color-2: #191718;
-$color-0: #0B0C10;
-$color-1: #121e2b;
-$color-2: #162536;
-$color-3: #F21137;
-$color-4: #79031D;
-$color-5: #17E9E0;
-$color-6: #E0E5E9;
+
+// $color-0: #0D0628;
+// $color-1: #2C2A4A;
+// $color-2: #4F518C;
+// $color-3: #845fff;
+// $color-4: #EFA00B;
+// $color-5: #44AF69;
+// $color-6: #D3D3D3;
+// $color-7: #ffffff;
+// $color-8: #ffffff09;
+// $color-9: rgba(58, 27, 27, 0.5);
+// $color-10: #B59DEB;
+
+$color-0: #251101;
+$color-1: #0D0628;
+$color-2: #231D3C;
+$color-3: #EFA00B;
+$color-4: #FE4A49;
+$color-5: #009FB7;
+$color-6: #E0D3DE;
 $color-7: #ffffff;
 $color-8: #ffffff09;
-$color-9: rgba(0, 0, 0, 0.4);
-$color-10: rgba(23, 233, 223, 0.8);
+$color-9: rgba(0, 0, 0, 0.5);
+$color-10: rgba(0, 159, 183, 1);
+
+// $color-0: #0B0C10;
+// $color-1: #121e2b;
+// $color-2: #162536;
+// $color-3: #F21137;
+// $color-4: #79031D;
+// $color-5: #17E9E0;
+// $color-6: #E0E5E9;
+// $color-7: #ffffff;
+// $color-8: #ffffff09;
+// $color-9: rgba(0, 0, 0, 0.5);
+// $color-10: rgba(23, 233, 223, 0.8);
 
 
 * {
@@ -109,6 +133,7 @@ section {
         color: $color-7;
     }
 }
+
 .btn-3 {
     background: $color-5;
     color: $color-1;
@@ -117,6 +142,7 @@ section {
         color: $color-7;
     }
 }
+
 .btn-4 {
     background: $color-1;
     color: $color-7;
@@ -183,6 +209,7 @@ section {
     top: 0;
     border-radius: 0;
 }
+
 .btn-3::before {
     content: '';
     position: absolute;

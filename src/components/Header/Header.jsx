@@ -3,7 +3,7 @@ import "./Header.scss";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
@@ -31,7 +31,7 @@ const Header = () => {
           href="#Contact"
           className="btn btn-1 linkContact"
           initial={{ y: -100, opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut"}}
+          transition={{ duration: 1, ease: easeIn }}
           animate={{ y: 0, opacity: 1 }}>
           {t("btn_menu_contact")}
         </motion.a>
