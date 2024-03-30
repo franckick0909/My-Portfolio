@@ -10,20 +10,20 @@
     font-size: clamp(1.2rem, 3vw, 2rem);
     font-family: $font-Syne;
     font-weight: 600;
-    color: $color-7;
+    color: $color-2;
     display: flex;
     transition: color 0.3s ease;
 
 
     &.active {
-        color: $color-6;
+        color: $color-5;
 
         &:hover {
-            color: $color-3;
+            color: $color-7;
         }
     }
 
     &:hover {
-        color: $color-5;
+        color: $color-4;
     }
 }

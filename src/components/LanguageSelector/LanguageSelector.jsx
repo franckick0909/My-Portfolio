@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { FaGlobe, FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const languages = [
   { code: "en", lang: "English" },
@@ -35,81 +36,48 @@ const LanguageSelector = () => {
     <motion.div
       className="btn-container"
       initial={{ y: -100, opacity: 0 }}
-      transition={{stiffness: 100}}
+      transition={{ stiffness: 100 }}
       animate={{ y: 0, opacity: 1 }}>
-      <div className="drop-content" onClick={handleOpenLang}>
-        <div className="drop-globe">
-          <FaGlobe className="globe" />
-          <a href="#" className="lang">
-            Langues
-          </a>
-        </div>
+      <div className="drop-globe">
+        <FaGlobe className="globe" />
 
-        <div className="drop-icon">
-          <FaChevronDown
-            className={`chevron ${arrow ? "arrowTop" : ""}`}
-            onClick={handleOpenLang}
-          />
+        <div className="drop-content" onClick={handleOpenLang}>
+          <p className="lang">Langues</p>
+
+          <div className="drop-icon">
+            <FaChevronDown
+              className={`chevron ${arrow ? "arrowTop" : ""}`}
+              onClick={handleOpenLang}
+            />
+          </div>
         </div>
       </div>
 
-      {openLang && (
-        <motion.ul
-          className={`lang-container ${openLang ? "open" : ""}`}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{
-            opacity: 1,
-            y: 36,
-            transition: { stiffness: 80, delayChildren: 0.5 },
-          }}
-          exit={{ y: -10, opacity: 0, transition: { duration: 0.5 } }}>
-          {languages.map((lng) => (
-            <motion.li
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              key={lng.code}
-              className={`drop-element ${
-                lng.code === i18n.language ? "selected" : ""
-              }`}
-              onClick={() => changeLanguage(lng.code)}>
-              {lng.lang}
-            </motion.li>
-          ))}
-        </motion.ul>
-      )}
-      {/* <div className="drop-element"></div> */}
+      <AnimatePresence initial={false}>
+        {openLang && (
+          <motion.ul
+            className={`lang-container ${openLang ? "open" : ""}`}
+            initial={{ opacity: 0, y: -30}}
+            animate={{ opacity: 1, y: 36}}
+            exit={{ opacity: 0, y: -10, scaleY: 0}}
+            >
+            {languages.map((lng) => (
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                key={lng.code}
+                className={`drop-element ${
+                  lng.code === i18n.language ? "selected" : ""
+                }`}
+                onClick={() => changeLanguage(lng.code)}>
+                {lng.lang}
+              </motion.li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </motion.div>
-    // <div className={`btn-container ${openLang ? "open" : "close"}`}>
-    //   <FaGlobe className="earth-icon" onClick={handleOpenLang} />
-
-    //     {openLang && (
-    //       <div className="lang-container">
-    //         {languages.map((lng) => (
-    //           <button
-    //             key={lng.code}
-    //             className={`btn-lang ${
-    //               lng.code === i18n.language ? "selected" : ""
-    //             }`}
-    //             onClick={() => changeLanguage(lng.code)}>
-    //             {lng.lang}
-    //           </button>
-    //         ))}
-    //       </div>
-    //     )}
-    // </div>
   );
 };
 
 export default LanguageSelector;
-
-{
-  /* {languages.map((lng) => (
-    //     <button
-    //       key={lng.code}
-    //       className={`btn-lang ${lng.code === i18n.language ? "selected" : ""}`}
-    //       onClick={() => changeLanguage(lng.code)}>
-    //       {lng.lang}
-    //     </button>
-    //   ))}
-    </div> */
-}

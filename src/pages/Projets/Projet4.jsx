@@ -1,8 +1,13 @@
 import "./Projet.scss";
-import img1 from "../../assets/img/projects/netprime/netprime1.webp";
-import img2 from "../../assets/img/projects/netprime/netprime2.webp";
-import img3 from "../../assets/img/projects/netprime/netprime3.webp";
-import img4 from "../../assets/img/projects/netprime/netprime4.webp";
+import img1 from "../../assets/img/projects/moviedb/moviedb1.webp";
+import img2 from "../../assets/img/projects/moviedb/moviedb2.webp";
+import img3 from "../../assets/img/projects/moviedb/moviedb3.webp";
+import img4 from "../../assets/img/projects/moviedb/moviedb4.webp";
+import img5 from "../../assets/img/projects/moviedb/moviedb5.webp";
+import img6 from "../../assets/img/projects/moviedb/moviedb6.webp";
+import img7 from "../../assets/img/projects/moviedb/moviedb7.webp";
+
+
 
 import icon1 from "../../assets/icons/html5.png";
 import icon2 from "../../assets/icons/css3.png";
@@ -27,7 +32,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const Projet4 = () => {
-  const dataImage = [img1, img2, img3, img4];
+  const dataImage = [img1, img2, img3, img4, img5, img6, img7];
 
   const dataIcons = [
     {
@@ -149,17 +154,17 @@ const Projet4 = () => {
         initial="initial"
         animate="animate">
         <motion.h1 variants={yVariants}>
-          Projet <span>NetPrime</span>
+          Projet <span>MovieDB</span>
         </motion.h1>
       </motion.div>
       <hr />
 
       <motion.div className="container">
-        <motion.div className="image"
+        <motion.div
+          className="image"
           initial="initial"
           animate="animate"
-          variants={xVariantsLeft}
-        >
+          variants={xVariantsLeft}>
           <motion.div className="bouton" variants={xVariantsLeft}>
             <Link to="/" className="btn btn-1 btn-retour">
               <span>
@@ -201,23 +206,24 @@ const Projet4 = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div className="texte"           
+        <motion.div
+          className="texte"
           initial="initial"
           animate="animate"
-          variants={xVariantsRight}
-        >
+          variants={xVariantsRight}>
           <motion.div className="texte__content" variants={xVariantsRight}>
             <p className="icon">
               <span>
                 <FaCalendarCheck />
               </span>
-              Année : 2023
+              Année : 2024
             </p>
 
-            <motion.h3 variants={xVariantsRight} >Scénario</motion.h3>
+            <motion.h3 variants={xVariantsRight}>Scénario</motion.h3>
             <p>
               Travail personnel réalisé en dehors du cadre de la formation, pour
-              me familliariser avec JavaScript et les API REST.
+              me familliariser avec REACT.js, Vite.js, et les API REST. Encore
+              en construction, ce site est un projet de type Netflix.
             </p>
 
             <motion.h3 variants={xVariantsRight}>Objectifs</motion.h3>
@@ -226,20 +232,26 @@ const Projet4 = () => {
               <li>
                 <p>
                   Développer une page d{"'"}accueil avec un carrousel de films,
-                  actuellement à l{"'"}affiche, en utilisant l{"'"}API REST de
-                  TMDB.
+                  en plein écran, en utilisant l{"'"}API REST de TMDB.
                 </p>
               </li>
               <li>
                 <p>
-                  Développer une recherche de films dans la page d{"'"}accueil,
-                  en utilisant l{"'"}API REST de TMDB.
+                  Développer une recherche de films, et/ou de séries TV, en
+                  utilisant l{"'"}API REST de TMDB.
                 </p>
               </li>
               <li>
                 <p>
-                  Développer une modale pour afficher les détails d{"'"}un film,
-                  ou d{"'"}une série, en utilisant l{"'"}API REST de TMDB.
+                  Développer une page consacrée aux films. Développer une page
+                  consacrée aux séries TV. Développer une page consacrée à la
+                  recherche par genre de film.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Développer une page pour les films et l{"'"}autre pour les
+                  séries TV, consacrée aux détails de chaque film ou série TV.
                 </p>
               </li>
             </motion.ul>
@@ -249,19 +261,18 @@ const Projet4 = () => {
             <motion.ul className="infos" variants={xVariantsRight}>
               <li>
                 <p>
-                  <span>&#10003; </span> Intégration Web, HTML - CSS -
-                  JavaScript.
+                  <span>&#10003; </span> Intégration Web, React avec Vitejs.
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Dynamisme / Animation par JavaScript.
+                  <span>&#10003; </span> Dynamisme / Animation en React - SASS.
                 </p>
               </li>
               <li>
                 <p>
                   <span>&#10003; </span> Utiliser l{"'"}API REST de TMDB, et
-                  apprendre à se servir de Swiperjs.
+                  Swiperjs.
                 </p>
               </li>
               <li>
@@ -273,13 +284,17 @@ const Projet4 = () => {
 
             <hr />
 
-            <motion.h3 variants={xVariantsRight}>Technologies utilisées</motion.h3>
+            <motion.h3 variants={xVariantsRight}>
+              Technologies utilisées
+            </motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
               {dataIcons
                 .filter(
                   (item) =>
                     item.category === "Front-end" ||
+                    item.category === "React" ||
+                    item.category === "Design" ||
                     item.category === "Back-end" ||
                     item.category === "Javascript"
                 )
@@ -299,7 +314,10 @@ const Projet4 = () => {
                 .filter((item) => item.id === 4)
                 .map((item, index) => {
                   return (
-                    <motion.div key={index} className="boutons" variants={xVariantsRight}>
+                    <motion.div
+                      key={index}
+                      className="boutons"
+                      variants={xVariantsRight}>
                       <a
                         href={item.github}
                         target="_blank"

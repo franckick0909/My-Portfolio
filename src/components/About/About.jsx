@@ -44,7 +44,7 @@ const About = () => {
   };
 
   const { t } = useTranslation();
-  const { h1, h2, h3, p1, p2, p3, span1, span2, span3, span4, span5, span6, span7, btn3, btn4 } = t("about");
+  const { h1, h2, h3, p1, p2, p3, span1, span2, span3, span4, span5, span6, span7, span8, span9, span10, span11, btn3, btn4 } = t("about");
 
   return (
     <motion.section id="About" className="About">
@@ -146,7 +146,7 @@ const About = () => {
                   </motion.td>
                   <motion.td>
                     <motion.p>
-                      <motion.span>:</motion.span> 48 years
+                      <motion.span>:</motion.span> 48 {span8}
                     </motion.p>
                   </motion.td>
                 </motion.tr>
@@ -160,7 +160,7 @@ const About = () => {
                   </motion.td>
                   <motion.td>
                     <motion.p>
-                      <motion.span>:</motion.span> French
+                      <motion.span>:</motion.span> {span9}
                     </motion.p>
                   </motion.td>
                 </motion.tr>
@@ -174,7 +174,7 @@ const About = () => {
                   </motion.td>
                   <motion.td>
                     <motion.p>
-                      <motion.span>:</motion.span> French, English
+                      <motion.span>:</motion.span> {span10}
                     </motion.p>
                   </motion.td>
                 </motion.tr>
@@ -202,7 +202,7 @@ const About = () => {
                   </motion.td>
                   <motion.td>
                     <motion.p>
-                      <motion.span>:</motion.span> Available
+                      <motion.span>:</motion.span> {span11}
                     </motion.p>
                   </motion.td>
                 </motion.tr>

@@ -32,13 +32,13 @@
     },
     {
       "id": 4,
-      "category": "cat2",
-      "name": "NetPrime",
-      "image": "/src/assets/img/projects/netprime/netprime1.png",
+      "category": "cat3",
+      "name": "MovieDB",
+      "image": "/src/assets/img/projects/moviedb/moviedb1.webp",
       "link": "/My-Portfolio/Projet4",
       "active": "active",
-      "github": "https://github.com/franckick0909/NetPrime",
-      "url": "https://franckick0909.github.io/NetPrime/"
+      "github": "https://github.com/franckick0909/NetPrime2",
+      "url": "https://franckick0909.github.io/NetPrime2"
     },
     {
       "id": 5,
