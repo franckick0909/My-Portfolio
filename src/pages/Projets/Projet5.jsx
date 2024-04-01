@@ -21,6 +21,7 @@ import {
   FaArrowLeft,
   FaLink,
   FaGithub,
+  FaPlus,
 } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import dataProjet from "../../data/dataProjets.json";
@@ -28,8 +29,21 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
+import { AnimatePresence } from "framer-motion";
 
 const Projet5 = () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+    console.log(selectedImage);
+    const openModal = (imageSrc) => {
+      setIsOpen(true);
+      setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+      setIsOpen(false);
+    };
 
             const { t } = useTranslation();
             const {
@@ -172,7 +186,7 @@ const Projet5 = () => {
         initial="initial"
         animate="animate">
         <motion.h1 variants={yVariants}>
-        {h1} <span>{span}</span>
+          {h1} <span>{span}</span>
         </motion.h1>
       </motion.div>
       <hr />
@@ -194,18 +208,42 @@ const Projet5 = () => {
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
-            {dataImage.map((item, index) => {
-              return (
-                <motion.img
-                  key={index}
+            {dataImage.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={xVariantsLeft}
+                className="image__content__relative">
+                <img
                   src={item}
-                  alt="images de mon portfolio #2"
-                  variants={xVariantsLeft}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
+                  alt="screen MovieDB"
+                  onClick={() => openModal(item)}
                 />
-              );
-            })}
+                <motion.div className="overay">
+                  <motion.div className="overlay__content">
+                    <motion.button onClick={openModal} className="openModal">
+                      <FaPlus className="plus" />
+                    </motion.button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          className="modal"
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0 }}>
+                          <div className="modal-content">
+                            <img src={item} alt="screen portfolio #2" />
+
+                            <button onClick={closeModal} className="btn btn-1">
+                              close
+                            </button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
 
           <motion.div className="boutons" variants={xVariantsLeft}>
@@ -239,27 +277,19 @@ const Projet5 = () => {
             </p>
 
             <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
-            <p>
-              {p1}
-            </p>
+            <p>{p1}</p>
 
             <h3>{title2}</h3>
 
             <motion.ul className="objectifs" variants={xVariantsRight}>
               <li>
-                <p>
-                  {p2}
-                </p>
+                <p>{p2}</p>
               </li>
               <li>
-                <p>
-                  {p3}
-                </p>
+                <p>{p3}</p>
               </li>
               <li>
-                <p>
-                  {p4}
-                </p>
+                <p>{p4}</p>
               </li>
             </motion.ul>
 
@@ -280,9 +310,7 @@ const Projet5 = () => {
 
             <hr />
 
-            <motion.h3 variants={xVariantsRight}>
-              {title4}
-            </motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title4}</motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
               {dataIcons

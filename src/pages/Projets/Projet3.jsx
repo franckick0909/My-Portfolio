@@ -20,6 +20,7 @@ import {
   FaArrowLeft,
   FaLink,
   FaGithub,
+  FaPlus,
 } from "react-icons/fa6";
 import dataProjet from "../../data/dataProjets.json";
 import { Link, NavLink } from "react-router-dom";
@@ -27,148 +28,160 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
 import { useTranslation } from "react-i18next";
+import { AnimatePresence } from "framer-motion";
 
 const Projet3 = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  console.log(selectedImage);
 
-      const { t } = useTranslation();
-      const {
-        h1,
-        span,
-        h2,
-        btnretour,
-        date,
-        title1,
-        title2,
-        title3,
-        title4,
-        p1,
-        p2,
-        p3,
-        p4,
-        li1,
-        li2,
-        li4,
-        btn2,
-      } = t("projet3");
+  const openModal = (imageSrc) => {
+    setIsOpen(true);
+    setSelectedImage(imageSrc);
+  };
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
-    const dataImage = [img1, img2, img3, img4];
+  const { t } = useTranslation();
+  const {
+    h1,
+    span,
+    h2,
+    btnretour,
+    date,
+    title1,
+    title2,
+    title3,
+    title4,
+    p1,
+    p2,
+    p3,
+    p4,
+    li1,
+    li2,
+    li4,
+    btn2,
+  } = t("projet3");
 
-    const dataIcons = [
-      {
-        icon: icon1,
-        title: "HTML5",
-        href: "https://www.w3schools.com/html/",
-        category: "Front-end",
-      },
-      {
-        icon: icon2,
-        title: "CSS3",
-        href: "https://www.w3schools.com/css/",
-        category: "Front-end",
-      },
-      {
-        icon: icon3,
-        title: "SASS",
-        href: "https://sass-lang.com/",
-        category: "Front-end",
-      },
-      {
-        icon: icon4,
-        title: "Javascript",
-        href: "https://www.w3schools.com/js/",
-        category: "Javascript",
-      },
-      {
-        icon: icon5,
-        title: "ReactJS",
-        href: "https://fr.reactjs.org/",
-        category: "React",
-      },
-      {
-        icon: icon6,
-        title: "Figma",
-        href: "https://www.figma.com/",
-        category: "Design",
-      },
-      {
-        icon: icon7,
-        title: "Git",
-        href: "https://git-scm.com/",
-        category: "Front-end",
-      },
-      {
-        icon: icon8,
-        title: "NextJS",
-        href: "https://nextjs.org/",
-        category: "NextJS",
-      },
-      {
-        icon: icon9,
-        title: "NodeJS",
-        href: "https://nodejs.org/en/",
-        category: "Back-end",
-      },
+  const dataImage = [img1, img2, img3, img4];
+
+  const dataIcons = [
+    {
+      icon: icon1,
+      title: "HTML5",
+      href: "https://www.w3schools.com/html/",
+      category: "Front-end",
+    },
+    {
+      icon: icon2,
+      title: "CSS3",
+      href: "https://www.w3schools.com/css/",
+      category: "Front-end",
+    },
+    {
+      icon: icon3,
+      title: "SASS",
+      href: "https://sass-lang.com/",
+      category: "Front-end",
+    },
+    {
+      icon: icon4,
+      title: "Javascript",
+      href: "https://www.w3schools.com/js/",
+      category: "Javascript",
+    },
+    {
+      icon: icon5,
+      title: "ReactJS",
+      href: "https://fr.reactjs.org/",
+      category: "React",
+    },
+    {
+      icon: icon6,
+      title: "Figma",
+      href: "https://www.figma.com/",
+      category: "Design",
+    },
+    {
+      icon: icon7,
+      title: "Git",
+      href: "https://git-scm.com/",
+      category: "Front-end",
+    },
+    {
+      icon: icon8,
+      title: "NextJS",
+      href: "https://nextjs.org/",
+      category: "NextJS",
+    },
+    {
+      icon: icon9,
+      title: "NodeJS",
+      href: "https://nodejs.org/en/",
+      category: "Back-end",
+    },
   ];
 
-      const yVariants = {
-        initial: {
-          opacity: 0,
-          y: 100,
-        },
-        animate: {
-          y: 0,
-          opacity: 1,
-          transition: {
-            stiffness: 100,
-            type: "spring",
-            damping: 30,
-            staggerChildren: 0.1,
-            delayChildren: 0.2,
-          },
-        },
-      };
-
-      const xVariantsLeft = {
-        initial: {
-          opacity: 0,
-          x: -100,
-        },
-        animate: {
-          opacity: 1,
-          x: 0,
-          transition: {
-            stiffness: 100,
-            type: "spring",
-            damping: 22,
-            staggerChildren: 0.14,
-            delayChildren: 0.1,
-          },
-        },
-      };
-
-      const xVariantsRight = {
-        initial: {
-          opacity: 0,
-          x: 100,
-        },
-        animate: {
-          opacity: 1,
-          x: 0,
-          transition: {
-            stiffness: 100,
-            type: "spring",
-            damping: 22,
-            staggerChildren: 0.14,
-            delayChildren: 0.1,
-          },
-        },
+  const yVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        stiffness: 100,
+        type: "spring",
+        damping: 30,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
   };
-  
-   const [activeLink, setActiveLink] = useState(null);
-  
+
+  const xVariantsLeft = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        stiffness: 100,
+        type: "spring",
+        damping: 22,
+        staggerChildren: 0.14,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const xVariantsRight = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        stiffness: 100,
+        type: "spring",
+        damping: 22,
+        staggerChildren: 0.14,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const [activeLink, setActiveLink] = useState(null);
+
   return (
-    <section id="Projet2" className="Projet">
+    <section id="Projet3" className="Projet">
       <motion.div
         className="title"
         variants={yVariants}
@@ -199,18 +212,42 @@ const Projet3 = () => {
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
-            {dataImage.map((item, index) => {
-              return (
-                <motion.img
-                  key={index}
+            {dataImage.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={xVariantsLeft}
+                className="image__content__relative">
+                <img
                   src={item}
-                  alt="images du projet ohmyfood"
-                  variants={xVariantsLeft}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
+                  alt="Sophie Bluel"
+                  onClick={() => openModal(item)}
                 />
-              );
-            })}
+                <motion.div className="overay">
+                  <motion.div className="overlay__content">
+                    <motion.button onClick={openModal} className="openModal">
+                      <FaPlus className="plus" />
+                    </motion.button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          className="modal"
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0 }}>
+                          <div className="modal-content">
+                            <img src={item} alt="Screen ohMyFood" />
+
+                            <button onClick={closeModal} className="btn btn-1">
+                              close
+                            </button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
 
           <motion.div className="boutons" variants={xVariantsLeft}>
@@ -244,27 +281,19 @@ const Projet3 = () => {
             </p>
 
             <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
-            <p>
-              {p1}
-            </p>
+            <p>{p1}</p>
 
             <motion.h3 variants={xVariantsRight}>{title2}</motion.h3>
 
             <motion.ul className="objectifs" variants={xVariantsRight}>
               <li>
-                <p>
-                  {p2}
-                </p>
+                <p>{p2}</p>
               </li>
               <li>
-                <p>
-                  {p3}
-                </p>
+                <p>{p3}</p>
               </li>
               <li>
-                <p>
-                  {p4}
-                </p>
+                <p>{p4}</p>
               </li>
             </motion.ul>
 
@@ -290,9 +319,7 @@ const Projet3 = () => {
 
             <hr />
 
-            <motion.h3 variants={xVariantsRight}>
-              {title4}
-            </motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title4}</motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
               {dataIcons
@@ -319,7 +346,7 @@ const Projet3 = () => {
 
             <motion.div className="boutons" variants={xVariantsRight}>
               {dataProjet
-                .filter((item) => item.id === 2)
+                .filter((item) => item.id === 3)
                 .map((item, index) => {
                   return (
                     <motion.div

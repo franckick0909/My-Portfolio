@@ -34,9 +34,10 @@ import { useTranslation } from "react-i18next";
 import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
 
 const Projet1 = () => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-
+  console.log(selectedImage);
   const openModal = (imageSrc) => {
     setIsOpen(true);
     setSelectedImage(imageSrc);
@@ -229,11 +230,11 @@ const Projet1 = () => {
                     alt="Sophie Bluel"
                     onClick={() => openModal(item)}
                   />
-                  <div className="overay">
-                    <div className="overlay__content">
-                      <button onClick={openModal} className="openModal">
+                  <motion.div className="overay"  >
+                    <motion.div className="overlay__content">
+                      <motion.button onClick={openModal} className="openModal">
                         <FaPlus className="plus" />
-                      </button>
+                      </motion.button>
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
@@ -253,8 +254,8 @@ const Projet1 = () => {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
               ))}
             </motion.div>
