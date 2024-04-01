@@ -24,13 +24,49 @@ import {
   FaArrowLeft,
   FaLink,
   FaGithub,
+  FaPlus,
 } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import dataProjet from "../../data/dataProjets.json";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
 
 const Projet1 = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (imageSrc) => {
+    setIsOpen(true);
+    setSelectedImage(imageSrc);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const { t } = useTranslation();
+  const {
+    h1,
+    span,
+    btnretour,
+    date,
+    title1,
+    title2,
+    title3,
+    title4,
+    p1,
+    p2,
+    p3,
+    p4,
+    li1,
+    li2,
+    li3,
+    li4,
+    btn2,
+  } = t("projet1");
+
   const dataImage = [img1, img2, img3, img4, img5, img6, img7];
 
   const dataIcons = [
@@ -91,7 +127,7 @@ const Projet1 = () => {
   ];
 
   const [activeLink, setActiveLink] = useState(null);
-  
+
   const yVariants = {
     initial: {
       opacity: 0,
@@ -146,225 +182,224 @@ const Projet1 = () => {
     },
   };
 
-
   return (
     <>
-    <motion.section id="Projet1" className="Projet">
-      <motion.div
-        className="title"
-        variants={yVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <motion.h1 variants={yVariants}>
-          Projet <span>Sophie Bluel</span>
-        </motion.h1>
-        <motion.img
-          src={logo}
-          alt="logo de Sophie Bluel"
+      <motion.section id="Projet1" className="Projet">
+        <motion.div
+          className="title"
           variants={yVariants}
-        />
-      </motion.div>
-      <hr />
-
-      <motion.div className="container">
-        <motion.div
-          className="image"
-          variants={xVariantsLeft}
-          initial="initial"
-          animate="animate"
-          >
-          <motion.div className="bouton" variants={xVariantsLeft}>
-            <Link
-              to="/"
-              className="btn btn-1 btn-retour"
-              >
-              <span>
-                <FaArrowLeft />
-              </span>
-              Retour Home
-              </Link>
-          </motion.div>
-
-          <motion.div className="image__content" variants={xVariantsLeft}>
-            {dataImage.map((item, index) => {
-              return (
-                <motion.img
-                  loading="lazy"
-                  key={index}
-                  src={item}
-                  alt="images du projet Sophie Bluel"
-                  variants={xVariantsLeft}
-                  whileHover={{ scale: 1.3 }}
-                  transition={{ duration: 0.2 }}
-                />
-              );
-            })}
-          </motion.div>
-
-          <motion.div className="boutons" variants={xVariantsLeft}>
-            {dataProjet.map((item, index) => {
-              return (
-                <NavLink
-                  to={item.link}
-                  key={index}
-                  className={`btn btn-2 btn-suivant ${
-                    activeLink === item.id ? "active" : ""
-                  }`}
-                  onClick={() => setActiveLink(item.id)}
-                  >
-                  {item.id}
-                </NavLink>
-              );
-            })}
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="texte"
-          variants={xVariantsRight}
           initial="initial"
           animate="animate">
-          <motion.div className="texte__content" variants={xVariantsRight}>
-            <p className="icon">
-              <span>
-                <FaCalendarCheck />
-              </span>
-              Année : 2023
-            </p>
+          <motion.h1 variants={yVariants}>
+            {h1} <span>{span}</span>
+          </motion.h1>
 
-            <motion.h3 variants={xVariantsRight}>Scénario</motion.h3>
-            <p>
-              Vous travaillez comme développeur front-end pour {"l'"}agence
-              ArchiWebos qui comprend 50 salariés. Ayant terminé votre dernier
-              projet avec un peu {"d'"}avance, vous êtes envoyé en renfort comme
-              développeur front-end {"d'"}une équipe qui travaille sur la
-              conception du site portfolio {"d'"}une architecte {"d'"}intérieur.
-            </p>
+          <motion.img
+            src={logo}
+            alt="logo de Sophie Bluel"
+            variants={yVariants}
+          />
+        </motion.div>
+        <hr />
 
-            <motion.h3 variants={xVariantsRight}>Objectifs</motion.h3>
+        <motion.div className="container">
+          <motion.div
+            className="image"
+            variants={xVariantsLeft}
+            initial="initial"
+            animate="animate">
+            <motion.div className="bouton" variants={xVariantsLeft}>
+              <Link to="/" className="btn btn-1 btn-retour">
+                <span>
+                  <FaArrowLeft />
+                </span>
+                {btnretour}
+              </Link>
+              <LanguageSelector />
+            </motion.div>
 
-            <motion.ul className="objectifs" variants={xVariantsRight}>
-              <li>
-                <p>
-                  Développer la page de présentation des travaux de {"l'a"}
-                  rchitecte (à partir du HTML fourni).
-                </p>
-              </li>
-              <li>
-                <p>
-                  {`Développer la page de connexion de 
-                  l'administrateur du site (le client) (code à créer de
-                  zéro).`}
-                </p>
-              </li>
-              <li>
-                <p>
-                  Développer les modales permettant {"d'"}uploader et de
-                  supprimer de nouveaux médias.
-                </p>
-              </li>
-            </motion.ul>
+            <motion.div className="image__content" variants={xVariantsLeft}>
+              {dataImage.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={xVariantsLeft}
+                  className="image__content__relative">
+                  <img
+                    src={item}
+                    alt="Sophie Bluel"
+                    onClick={() => openModal(item)}
+                  />
+                  <div className="overay">
+                    <div className="overlay__content">
+                      <button onClick={openModal} className="openModal">
+                        <FaPlus className="plus" />
+                      </button>
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            className="modal"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0 }}>
+                            <div className="modal-content">
+                              <img src={item} alt="Sophie Bluel" />
 
-            <motion.h3 variants={xVariantsRight}>Infos Projet</motion.h3>
+                              <button
+                                onClick={closeModal}
+                                className="btn btn-1">
+                                close
+                              </button>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
 
-            <motion.ul className="infos" variants={xVariantsRight}>
-              <li>
-                <p>
-                  <span>&#10003; </span> Intégration Web, HTML -
-                  CSS.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <span>&#10003; </span> Dynamisme / Animation par
-                  JavaScript.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <span>&#10003; </span> Utiliser des API REST
-                  dans ce projet.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <span>&#10003; </span> Référencement naturel
-                  SEO.
-                </p>
-              </li>
-            </motion.ul>
+            <motion.div className="boutons" variants={xVariantsLeft}>
+              {dataProjet.map((item, index) => {
+                return (
+                  <NavLink
+                    to={item.link}
+                    key={index}
+                    className={`btn btn-2 btn-suivant ${
+                      activeLink === item.id ? "active" : ""
+                    }`}
+                    onClick={() => setActiveLink(item.id)}>
+                    {item.id}
+                  </NavLink>
+                );
+              })}
+            </motion.div>
+          </motion.div>
 
-            <hr />
+          <motion.div
+            className="texte"
+            variants={xVariantsRight}
+            initial="initial"
+            animate="animate">
+            <motion.div className="texte__content" variants={xVariantsRight}>
+              <p className="icon">
+                <span>
+                  <FaCalendarCheck />
+                </span>
+                {date} : 2023
+              </p>
 
-            <motion.h3 variants={xVariantsRight}>
-              Technologies utilisées
-            </motion.h3>
+              <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
+              <p>{p1}</p>
 
-            <motion.ul className="technologies" variants={xVariantsRight}>
-              {dataIcons
-                .filter(
-                  (item) =>
-                    item.category === "Front-end" ||
-                    item.category === "Design" ||
-                    item.category === "Back-end" ||
-                    item.category === "Javascript"
-                )
-                .map((item, index) => {
-                  return (
-                    <motion.li key={index} variants={xVariantsRight}>
-                      <motion.img
-                        src={item.icon}
-                        alt={item.title}
-                        variants={xVariantsRight}
-                      />
-                    </motion.li>
-                  );
-                })}
-            </motion.ul>
+              <motion.h3 variants={xVariantsRight}>{title2}</motion.h3>
 
-            <hr />
+              <motion.ul className="objectifs" variants={xVariantsRight}>
+                <li>
+                  <p>{p2}</p>
+                </li>
+                <li>
+                  <p>{p4}</p>
+                </li>
+                <li>
+                  <p>{p3}</p>
+                </li>
+              </motion.ul>
 
-            <motion.div className="boutons" variants={xVariantsRight}>
-              {dataProjet
-                .filter((item) => item.id === 1)
-                .map((item, index) => {
-                  return (
-                    <motion.div
-                      key={index}
-                      className="boutons"
-                      variants={xVariantsRight}>
-                      <a
-                        href={item.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-1 btn-code"
-                        >
-                        Github
-                        <span>
-                          <FaGithub />
-                        </span>
-                      </a>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-2 btn-projet"
-                        >
-                        Le site
-                        <span>
-                          <FaLink />
-                        </span>
-                      </a>
-                    </motion.div>
-                  );
-                })}
+              <motion.h3 variants={xVariantsRight}>{title3}</motion.h3>
+
+              <motion.ul className="infos" variants={xVariantsRight}>
+                <li>
+                  <p>
+                    <span>&#10003; </span>
+                    {li1}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span>&#10003; </span>
+                    {li2}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span>&#10003; </span>
+                    {li3}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span>&#10003; </span> {li4}
+                  </p>
+                </li>
+              </motion.ul>
+
+              <hr />
+
+              <motion.h3 variants={xVariantsRight}>{title4}</motion.h3>
+
+              <motion.ul className="technologies" variants={xVariantsRight}>
+                {dataIcons
+                  .filter(
+                    (item) =>
+                      item.category === "Front-end" ||
+                      item.category === "Design" ||
+                      item.category === "Back-end" ||
+                      item.category === "Javascript"
+                  )
+                  .map((item, index) => {
+                    return (
+                      <motion.li key={index} variants={xVariantsRight}>
+                        <motion.img
+                          src={item.icon}
+                          alt={item.title}
+                          variants={xVariantsRight}
+                        />
+                      </motion.li>
+                    );
+                  })}
+              </motion.ul>
+
+              <hr />
+
+              <motion.div className="boutons" variants={xVariantsRight}>
+                {dataProjet
+                  .filter((item) => item.id === 1)
+                  .map((item, index) => {
+                    return (
+                      <motion.div
+                        key={index}
+                        className="boutons"
+                        variants={xVariantsRight}>
+                        <a
+                          href={item.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-1 btn-code">
+                          Github
+                          <span>
+                            <FaGithub />
+                          </span>
+                        </a>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-2 btn-projet">
+                          {btn2}
+                          <span>
+                            <FaLink />
+                          </span>
+                        </a>
+                      </motion.div>
+                    );
+                  })}
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
 
-      <Footer />
+        <Footer />
       </motion.section>
     </>
   );

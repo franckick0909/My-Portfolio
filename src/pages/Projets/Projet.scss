@@ -26,6 +26,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 1rem;
             margin-bottom: 2rem;
 
@@ -33,13 +34,12 @@
                 font-family: $font-Rubik;
                 font-weight: bold;
                 color: $color-5;
-                text-shadow: 0 0 5px $color-5;
             }
         }
 
         img {
-            max-width: 500px;
-            width: 100%;
+            max-width: 100%;
+            display: block;
         }
 
         h2 {
@@ -81,17 +81,18 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 1rem;
+                width: 100%;
 
                 .btn-retour {
-                    flex: 0.5;
+
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     gap: 1rem;
 
-                    @media screen and (max-width: 768px) {
-                        flex: 1;
-                    }
+                    @media screen and (max-width: 768px) {}
                 }
             }
 
@@ -102,12 +103,86 @@
                 gap: 1.5rem;
                 padding: 2rem 0;
 
-                img {
-                    max-width: 100%;
-                    border-radius: 6px;
-                    box-shadow: 0 1px 5px $color-9;
+                &__relative {
+                    position: relative;
+
+                    img {
+                        max-width: 100%;
+                        border-radius: 6px;
+                        box-shadow: 0 1px 5px $color-9;
+                    }
+
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.3s ease;
+                        border-radius: 6px;
+
+                        &__content {
+                            position: absolute;
+                            background: rgba(46, 46, 46, 0.5);
+
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            opacity: 0;
+                            transition: all 0.3s ease;
+                            border-radius: 6px;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+
+                            .openModal {
+                                border: none;
+                                background: transparent;
+                                border-radius: 6px;
+                                padding: 0.5rem;
+
+                                .plus {
+                                    font-size: clamp(1.5rem, 3vw, 4rem);
+                                    color: $color-6;
+                                    cursor: pointer;
+                                    transform: rotate(0deg);
+                                    transition: transform 0.3s ease, color 0.3s ease;
+
+                                    &:hover {
+                                        color: $color-4;
+                                        transform: rotate(360deg);
+                                    }
+                                }
+
+                                .closeModal {
+                                    font-size: clamp(1.5rem, 3vw, 4rem);
+                                    color: $color-6;
+                                    cursor: pointer;
+                                    transition: color 0.3s ease;
+
+                                    &:hover {
+                                        color: $color-4;
+                                    }
+                                }
+
+                            }
+
+
+
+                        }
+                    }
                 }
             }
+
+
 
             .boutons {
                 display: flex;
@@ -229,7 +304,7 @@
                     width: 100%;
 
                     .btn-code {
-                        flex: 0.5;
+
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -237,7 +312,7 @@
                     }
 
                     .btn-projet {
-                        flex: 0.5;
+
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -248,4 +323,13 @@
             }
         }
     }
+}
+
+
+
+
+
+.closeModal {
+    cursor: pointer;
+    transition: color 0.3s ease;
 }

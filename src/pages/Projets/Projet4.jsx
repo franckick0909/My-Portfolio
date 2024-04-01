@@ -30,8 +30,34 @@ import { Link, NavLink } from "react-router-dom";
 import dataProjet from "../../data/dataProjets.json";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Projet4 = () => {
+
+        const { t } = useTranslation();
+        const {
+          h1,
+          span,
+          btnretour,
+          date,
+          title1,
+          title2,
+          title3,
+          title4,
+          p1,
+          p2,
+          p3,
+          p4,
+          p5,
+          li1,
+          li2,
+          li3,
+          li4,
+          btn2,
+        } = t("projet4");
+
+
   const dataImage = [img1, img2, img3, img4, img5, img6, img7];
 
   const dataIcons = [
@@ -154,7 +180,7 @@ const Projet4 = () => {
         initial="initial"
         animate="animate">
         <motion.h1 variants={yVariants}>
-          Projet <span>MovieDB</span>
+          {h1} <span>{span}</span>
         </motion.h1>
       </motion.div>
       <hr />
@@ -170,8 +196,9 @@ const Projet4 = () => {
               <span>
                 <FaArrowLeft />
               </span>
-              Retour Home
+              {btnretour}
             </Link>
+            <LanguageSelector />
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
@@ -182,7 +209,7 @@ const Projet4 = () => {
                   src={item}
                   alt="images du projet NetPrime"
                   variants={xVariantsLeft}
-                  whileHover={{ scale: 1.3 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 />
               );
@@ -216,77 +243,67 @@ const Projet4 = () => {
               <span>
                 <FaCalendarCheck />
               </span>
-              Année : 2024
+              {date} : 2024
             </p>
 
-            <motion.h3 variants={xVariantsRight}>Scénario</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
             <p>
-              Travail personnel réalisé en dehors du cadre de la formation, pour
-              me familliariser avec REACT.js, Vite.js, et les API REST. Encore
-              en construction, ce site est un projet de type Netflix.
+              {p1}
             </p>
 
-            <motion.h3 variants={xVariantsRight}>Objectifs</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title2}</motion.h3>
 
             <motion.ul className="objectifs" variants={xVariantsRight}>
               <li>
                 <p>
-                  Développer une page d{"'"}accueil avec un carrousel de films,
-                  en plein écran, en utilisant l{"'"}API REST de TMDB.
+                  {p2}
                 </p>
               </li>
               <li>
                 <p>
-                  Développer une recherche de films, et/ou de séries TV, en
-                  utilisant l{"'"}API REST de TMDB.
+                  {p3}
                 </p>
               </li>
               <li>
                 <p>
-                  Développer une page consacrée aux films. Développer une page
-                  consacrée aux séries TV. Développer une page consacrée à la
-                  recherche par genre de film.
+                  {p4}
                 </p>
               </li>
               <li>
                 <p>
-                  Développer une page pour les films et l{"'"}autre pour les
-                  séries TV, consacrée aux détails de chaque film ou série TV.
+                  {p5}
                 </p>
               </li>
             </motion.ul>
 
-            <motion.h3 variants={xVariantsRight}>Infos Projet</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title3}</motion.h3>
 
             <motion.ul className="infos" variants={xVariantsRight}>
               <li>
                 <p>
-                  <span>&#10003; </span> Intégration Web, React avec Vitejs.
+                  <span>&#10003; </span> {li1}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Dynamisme / Animation en React - SASS.
+                  <span>&#10003; </span> {li2}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Utiliser l{"'"}API REST de TMDB, et
-                  Swiperjs.
+                  <span>&#10003; </span> {li3}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Référencement naturel SEO.
+                  <span>&#10003; </span> {li4}
                 </p>
               </li>
             </motion.ul>
 
             <hr />
 
-            <motion.h3 variants={xVariantsRight}>
-              Technologies utilisées
-            </motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title4}</motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
               {dataIcons
@@ -333,7 +350,7 @@ const Projet4 = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-2 btn-projet">
-                        Le site
+                        {btn2}
                         <span>
                           <FaLink />
                         </span>

@@ -25,8 +25,31 @@ import dataProjet from "../../data/dataProjets.json";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Projet3 = () => {
+
+      const { t } = useTranslation();
+      const {
+        h1,
+        span,
+        h2,
+        btnretour,
+        date,
+        title1,
+        title2,
+        title3,
+        title4,
+        p1,
+        p2,
+        p3,
+        p4,
+        li1,
+        li2,
+        li4,
+        btn2,
+      } = t("projet3");
 
 
     const dataImage = [img1, img2, img3, img4];
@@ -152,9 +175,9 @@ const Projet3 = () => {
         initial="initial"
         animate="animate">
         <motion.h1>
-          Projet <span>OhMyFood</span>
+          {h1} <span>{span}</span>
         </motion.h1>
-        <motion.h2>ohmyfood</motion.h2>
+        <motion.h2>{h2}</motion.h2>
       </motion.div>
 
       <hr />
@@ -170,8 +193,9 @@ const Projet3 = () => {
               <span>
                 <FaArrowLeft />
               </span>
-              Retour Home
+              {btnretour}
             </Link>
+            <LanguageSelector />
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
@@ -182,7 +206,7 @@ const Projet3 = () => {
                   src={item}
                   alt="images du projet ohmyfood"
                   variants={xVariantsLeft}
-                  whileHover={{ scale: 1.3 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 />
               );
@@ -216,62 +240,50 @@ const Projet3 = () => {
               <span>
                 <FaCalendarCheck />
               </span>
-              Année : 2023
+              {date} : 2023
             </p>
 
-            <motion.h3 variants={xVariantsRight}>Scénario</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
             <p>
-              Vous avez intégré Ohmyfood en tant que développeur junior. Il s
-              {"'"}agit d{"'"}une jeune startup qui voudrait s{"'"}imposer sur
-              le marché de la restauration. Déjà présente à New-York, elle
-              souhaite désormais faire sa place à Paris.
+              {p1}
             </p>
 
-            <motion.h3 variants={xVariantsRight}>Objectifs</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title2}</motion.h3>
 
             <motion.ul className="objectifs" variants={xVariantsRight}>
               <li>
                 <p>
-                  Votre mission est de développer un site “mobile first” qui
-                  répertorie les menus de restaurants gastronomiques. En plus
-                  des systèmes classiques de réservation, les clients pourront
-                  composer le menu de leur repas pour que les plats soient prêts
-                  à leur arrivée. Finis, les temps d{"'"}attente au restaurant !
+                  {p2}
                 </p>
               </li>
               <li>
                 <p>
-                  En plus des systèmes classiques de réservation, les clients
-                  pourront composer le menu de leur repas pour que les plats
-                  soient prêts à leur arrivée. Finis, les temps d{"'"}attente au
-                  restaurant !
+                  {p3}
                 </p>
               </li>
               <li>
                 <p>
-                  Développer le site en mobile, tablette et desktop en s{"'"}
-                  appuyant rigoureusement sur les informations déterminées dans
-                  le brief créatif !
+                  {p4}
                 </p>
               </li>
             </motion.ul>
 
-            <motion.h3 variants={xVariantsRight}>Infos Projet</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title3}</motion.h3>
 
             <motion.ul className="infos" variants={xVariantsRight}>
               <li>
                 <p>
-                  <span>&#10003; </span> Intégration Web, HTML - CSS - SASS.
+                  <span>&#10003; </span> {li1}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Dynamisme / Animation en CSS - SASS.
+                  <span>&#10003; </span> {li2}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Référencement naturel SEO.
+                  <span>&#10003; </span> {li4}
                 </p>
               </li>
             </motion.ul>
@@ -279,7 +291,7 @@ const Projet3 = () => {
             <hr />
 
             <motion.h3 variants={xVariantsRight}>
-              Technologies utilisées
+              {title4}
             </motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
@@ -329,7 +341,7 @@ const Projet3 = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-2 btn-projet">
-                        Le site
+                        {btn2}
                         <span>
                           <FaLink />
                         </span>

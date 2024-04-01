@@ -26,8 +26,30 @@ import { Link, NavLink } from "react-router-dom";
 import dataProjet from "../../data/dataProjets.json";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
 
 const Projet5 = () => {
+
+            const { t } = useTranslation();
+            const {
+              h1,
+              span,
+              btnretour,
+              date,
+              title1,
+              title2,
+              title3,
+              title4,
+              p1,
+              p2,
+              p3,
+              p4,
+              li1,
+              li2,
+              btn2,
+            } = t("projet5");
+
   const dataImage = [img1, img2, img3, img4];
 
   const dataIcons = [
@@ -150,7 +172,7 @@ const Projet5 = () => {
         initial="initial"
         animate="animate">
         <motion.h1 variants={yVariants}>
-          Projet <span>Portfolio #2</span>
+        {h1} <span>{span}</span>
         </motion.h1>
       </motion.div>
       <hr />
@@ -166,8 +188,9 @@ const Projet5 = () => {
               <span>
                 <FaArrowLeft />
               </span>
-              Retour Home
+              {btnretour}
             </Link>
+            <LanguageSelector />
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
@@ -178,7 +201,7 @@ const Projet5 = () => {
                   src={item}
                   alt="images de mon portfolio #2"
                   variants={xVariantsLeft}
-                  whileHover={{ scale: 1.3 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 />
               );
@@ -212,62 +235,45 @@ const Projet5 = () => {
               <span>
                 <FaCalendarCheck />
               </span>
-              Année : 2023
+              {date} : 2023
             </p>
 
-            <motion.h3 variants={xVariantsRight}>Scénario</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
             <p>
-              Travail personnel réalisé avant la formation d{"'"}intégrateur
-              web, Chez OpenClassrooms, {"d'"}une durée de 9 mois.
+              {p1}
             </p>
 
-            <h3>Objectifs</h3>
+            <h3>{title2}</h3>
 
             <motion.ul className="objectifs" variants={xVariantsRight}>
               <li>
                 <p>
-                  Développer une animation pour le changer le thème du site.
-                  Développer une animation pour le menu burger. Développer une
-                  animation pour le formulaire de contact.
+                  {p2}
                 </p>
               </li>
               <li>
                 <p>
-                  Développer un site one page, avec un menu vertical, qui permet
-                  de se déplacer dans la page. Développer un site avec des
-                  animations au scroll.
+                  {p3}
                 </p>
               </li>
               <li>
                 <p>
-                  Développer un site responsive, qui s{"'"}adapte à toutes les
-                  tailles d{"'"}écran. Développer un site avec un design moderne
-                  et épuré.
+                  {p4}
                 </p>
               </li>
             </motion.ul>
 
-            <motion.h3 variants={xVariantsRight}>Infos Projet</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title3}</motion.h3>
 
             <motion.ul className="infos" variants={xVariantsRight}>
               <li>
                 <p>
-                  <span>&#10003; </span> Intégration Web, HTML - CSS.
+                  <span>&#10003; </span> {li1}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Dynamisme / Animation par JavaScript.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <span>&#10003; </span> Utiliser des API REST dans ce projet.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <span>&#10003; </span> Référencement naturel SEO.
+                  <span>&#10003; </span> {li2}
                 </p>
               </li>
             </motion.ul>
@@ -275,7 +281,7 @@ const Projet5 = () => {
             <hr />
 
             <motion.h3 variants={xVariantsRight}>
-              Technologies utilisées
+              {title4}
             </motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
@@ -326,7 +332,7 @@ const Projet5 = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-2 btn-projet">
-                        Le site
+                        {btn2}
                         <span>
                           <FaLink />
                         </span>

@@ -5,11 +5,17 @@ import { FaRegThumbsUp } from "react-icons/fa6";
 const Like = () => {
 
     const [like, setLike] = useState(10);
-    const [count, setCount] = useState(0);
+    const [dislike, setDislike] = useState(0);
 
     const handleLike = () => {
-        setLike(like + 1);
+        setLike(like ? like + 1 : 1);
     };
+
+    const handleDislike = () => {
+        setDislike(dislike ? dislike + 1 : -1);
+    };
+
+
 
 
     return (
@@ -19,8 +25,8 @@ const Like = () => {
                 <FaRegThumbsUp onClick={handleLike} />
             </button>
             <button>
-                <span>{count}</span>
-                <FaRegThumbsUp />
+                <span>{dislike}</span>
+                <FaRegThumbsUp onClick={handleDislike} />
             </button>
         </div>
     );

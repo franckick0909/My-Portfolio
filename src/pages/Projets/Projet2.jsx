@@ -26,124 +26,146 @@ import dataProjet from "../../data/dataProjets.json";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
 
 const Projet2 = () => {
+  const { t } = useTranslation();
+  const {
+    h1,
+    span,
+    btnretour,
+    date,
+    title1,
+    title2,
+    title3,
+    title4,
+    p1,
+    p2,
+    p3,
+    p4,
+    p5,
+    li1,
+    li2,
+    li3,
+    li4,
+    btn2,
+  } = t("projet2");
+  const dataImage = [img1, img2, img3, img4];
 
-    const dataImage = [img1, img2, img3, img4];
-
-    const dataIcons = [
-      {
-        icon: icon1,
-        title: "HTML5",
-        href: "https://www.w3schools.com/html/",
-        category: "Front-end",
-      },
-      {
-        icon: icon2,
-        title: "CSS3",
-        href: "https://www.w3schools.com/css/",
-        category: "Front-end",
-      },
-      {
-        icon: icon3,
-        title: "SASS",
-        href: "https://sass-lang.com/",
-        category: "Front-end",
-      },
-      {
-        icon: icon4,
-        title: "Javascript",
-        href: "https://www.w3schools.com/js/",
-        category: "Javascript",
-      },
-      {
-        icon: icon5,
-        title: "ReactJS",
-        href: "https://fr.reactjs.org/",
-        category: "React",
-      },
-      {
-        icon: icon6,
-        title: "Figma",
-        href: "https://www.figma.com/",
-        category: "Design",
-      },
-      {
-        icon: icon7,
-        title: "Git",
-        href: "https://git-scm.com/",
-        category: "Front-end",
-      },
-      {
-        icon: icon8,
-        title: "NextJS",
-        href: "https://nextjs.org/",
-        category: "NextJS",
-      },
-      {
-        icon: icon9,
-        title: "NodeJS",
-        href: "https://nodejs.org/en/",
-        category: "Back-end",
-      },
+  const dataIcons = [
+    {
+      icon: icon1,
+      title: "HTML5",
+      href: "https://www.w3schools.com/html/",
+      category: "Front-end",
+    },
+    {
+      icon: icon2,
+      title: "CSS3",
+      href: "https://www.w3schools.com/css/",
+      category: "Front-end",
+    },
+    {
+      icon: icon3,
+      title: "SASS",
+      href: "https://sass-lang.com/",
+      category: "Front-end",
+    },
+    {
+      icon: icon4,
+      title: "Javascript",
+      href: "https://www.w3schools.com/js/",
+      category: "Javascript",
+    },
+    {
+      icon: icon5,
+      title: "ReactJS",
+      href: "https://fr.reactjs.org/",
+      category: "React",
+    },
+    {
+      icon: icon6,
+      title: "Figma",
+      href: "https://www.figma.com/",
+      category: "Design",
+    },
+    {
+      icon: icon7,
+      title: "Git",
+      href: "https://git-scm.com/",
+      category: "Front-end",
+    },
+    {
+      icon: icon8,
+      title: "NextJS",
+      href: "https://nextjs.org/",
+      category: "NextJS",
+    },
+    {
+      icon: icon9,
+      title: "NodeJS",
+      href: "https://nodejs.org/en/",
+      category: "Back-end",
+    },
   ];
 
-    const yVariants = {
-      initial: {
-        opacity: 0,
-        y: 100,
+  const yVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        stiffness: 100,
+        type: "spring",
+        damping: 30,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
-      animate: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          stiffness: 100,
-          type: "spring",
-          damping: 30,
-          staggerChildren: 0.1,
-          delayChildren: 0.2,
-        },
-      },
-    };
+    },
+  };
 
-    const xVariantsLeft = {
-      initial: {
-        opacity: 0,
-        x: -100,
+  const xVariantsLeft = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        stiffness: 100,
+        type: "spring",
+        damping: 22,
+        staggerChildren: 0.14,
+        delayChildren: 0.1,
       },
-      animate: {
-        opacity: 1,
-        x: 0,
-        transition: {
-          stiffness: 100,
-          type: "spring",
-          damping: 22,
-          staggerChildren: 0.14,
-          delayChildren: 0.1,
-        },
-      },
-    };
+    },
+  };
 
-    const xVariantsRight = {
-      initial: {
-        opacity: 0,
-        x: 100,
+  const xVariantsRight = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        stiffness: 100,
+        type: "spring",
+        damping: 22,
+        staggerChildren: 0.14,
+        delayChildren: 0.1,
       },
-      animate: {
-        opacity: 1,
-        x: 0,
-        transition: {
-          stiffness: 100,
-          type: "spring",
-          damping: 22,
-          staggerChildren: 0.14,
-          delayChildren: 0.1,
-        },
-      },
-    };
+    },
+  };
 
-   const [activeLink, setActiveLink] = useState(null);
-  
+  const [activeLink, setActiveLink] = useState(null);
+
   return (
     <section id="Projet2" className="Projet">
       <motion.div
@@ -152,7 +174,7 @@ const Projet2 = () => {
         initial="initial"
         animate="animate">
         <motion.h1 variants={yVariants}>
-          Projet <span>Kasa</span>
+          {h1} <span>{span}</span>
         </motion.h1>
         <motion.img src={logo} alt="logo de Kasa" variants={yVariants} />
       </motion.div>
@@ -170,8 +192,9 @@ const Projet2 = () => {
               <span>
                 <FaArrowLeft />
               </span>
-              Retour Home
+              {btnretour}
             </Link>
+            <LanguageSelector />
           </motion.div>
 
           <motion.div className="image__content" variants={xVariantsLeft}>
@@ -182,7 +205,7 @@ const Projet2 = () => {
                   src={item}
                   alt="images du projet Kasa"
                   variants={xVariantsLeft}
-                  whileHover={{ scale: 1.3 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 />
               );
@@ -216,88 +239,56 @@ const Projet2 = () => {
               <span>
                 <FaCalendarCheck />
               </span>
-              Année : 2023
+              {date} : 2023
             </p>
 
-            <motion.h3 variants={xVariantsRight}>Scénario</motion.h3>
-            <p>
-              Kasa vous recrute en tant que développeur front-end en freelance
-              pour développer sa nouvelle plateforme web. Kasa est dans le
-              métier de la location d{"'"}appartements entre particuliers depuis
-              près de 10 ans maintenant. Avec plus de 500 annonces postées
-              chaque jour, Kasa fait partie des leaders de la location d{"'"}
-              appartements entre particuliers en France. L{"'"}occasion parfaite
-              pour vous d{"'"}ajouter une belle référence à votre portfolio de
-              freelance !
-              <br />
-              <br />
-              Le site de Kasa a été codé il y a maintenant plus de 10 ans en
-              ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé
-              une refonte totale pour passer à une stack complète en JavaScript
-              avec NodeJS côté back-end, et React côté front-end. Kasa en a
-              également profité pour commander de nouvelles maquettes auprès de
-              son designer habituel, qui est en freelance. Un gros chantier pour
-              cette année !
-            </p>
+            <motion.h3 variants={xVariantsRight}>{title1}</motion.h3>
+            <p>{p1}</p>
+            <br />
+            <p>{p2}</p>
 
-            <motion.h3 variants={xVariantsRight}>Objectifs</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title2}</motion.h3>
 
             <motion.ul className="objectifs" variants={xVariantsRight}>
               <li>
-                <p>
-                  Démarrer le projet React et développer l{"'"}ensemble de l
-                  {"'"}application, les composants React, les routes React
-                  Router, en suivant les maquettes Figma (responsives !). Et ce
-                  avec un code de qualité !
-                </p>
+                <p>{p3}</p>
               </li>
               <li>
-                <p>
-                  Le recrutement de la personne en charge du back-end n{"'"}est
-                  pas terminé et va prendre plus de temps que prévu. Du coup, il
-                  va falloir que tu fasses sans pour le moment. Je t{"'"}ai
-                  extrait les 20 dernières annonces de logements dans ce fichier
-                  JSON pour que tu puisses construire le Front qui correspond.
-                </p>
+                <p>{p4}</p>
               </li>
               <li>
-                <p>
-                  Développer avec Create React App ou Vite et utiliser SASS.
-                </p>
+                <p>{p5}</p>
               </li>
             </motion.ul>
 
-            <motion.h3 variants={xVariantsRight}>Infos Projet</motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title3}</motion.h3>
 
             <motion.ul className="infos" variants={xVariantsRight}>
               <li>
                 <p>
-                  <span>&#10003; </span> Intégration Web, React avec Vitejs.
+                  <span>&#10003; </span> {li1}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Dynamisme / Animation en React - SASS.
+                  <span>&#10003; </span> {li2}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Utilisation du fichier Json pour toutes
-                  les données.
+                  <span>&#10003; </span> {li3}
                 </p>
               </li>
               <li>
                 <p>
-                  <span>&#10003; </span> Référencement naturel SEO.
+                  <span>&#10003; </span> {li4}
                 </p>
               </li>
             </motion.ul>
 
             <hr />
 
-            <motion.h3 variants={xVariantsRight}>
-              Technologies utilisées
-            </motion.h3>
+            <motion.h3 variants={xVariantsRight}>{title4}</motion.h3>
 
             <motion.ul className="technologies" variants={xVariantsRight}>
               {dataIcons
@@ -348,7 +339,7 @@ const Projet2 = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-2 btn-projet">
-                        Le site
+                        {btn2}
                         <span>
                           <FaLink />
                         </span>

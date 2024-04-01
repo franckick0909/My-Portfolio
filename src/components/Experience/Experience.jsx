@@ -23,12 +23,31 @@ const Experience = () => {
     },
   };
 
+    const variant = {
+      hidden: {
+        opacity: 0,
+        scale: 0.2,
+        y: -100,
+      },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+          damping: 10,
+          stiffness: 100,
+          type: "spring",
+        },
+      },
+  };
+  
       const { t } = useTranslation();
 
   return (
     <motion.div className="container">
-      <h1>{t("experience")}</h1>
-
+      <motion.h1 variants={variant} initial="hidden" whileInView="visible">
+        {t("experience")}
+      </motion.h1>
       <motion.div
         className="timeline"
         variants={variants}

@@ -42,14 +42,53 @@ const About = () => {
       },
     },
   };
+  const variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.2,
+      y: -100,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        damping: 10,
+        stiffness: 100,
+        type: "spring",
+      },
+    },
+  };
 
   const { t } = useTranslation();
-  const { h1, h2, h3, p1, p2, p3, span1, span2, span3, span4, span5, span6, span7, span8, span9, span10, span11, btn3, btn4 } = t("about");
+  const {
+    h1,
+    h2,
+    h3,
+    p1,
+    p2,
+    p3,
+    span1,
+    span2,
+    span3,
+    span4,
+    span5,
+    span6,
+    span7,
+    span8,
+    span9,
+    span10,
+    span11,
+    btn3,
+    btn4,
+  } = t("about");
 
   return (
     <motion.section id="About" className="About">
       <motion.div className="container">
-        <h1>{h1}</h1>
+        <motion.h1 variants={variants} initial="hidden" whileInView="visible">
+          {h1}
+        </motion.h1>
         <motion.div
           className="left"
           variants={variantsLeft}
@@ -95,16 +134,10 @@ const About = () => {
             <motion.h3 variants={variantsRight}>{h3}</motion.h3>
 
             <motion.div className="description" variants={variantsRight}>
-              <motion.p variants={variantsRight}>
-                {p1}
-              </motion.p>
+              <motion.p variants={variantsRight}>{p1}</motion.p>
 
-              <motion.p variants={variantsRight}>
-                {p2}
-              </motion.p>
-              <motion.p variants={variantsRight}>
-                {p3}
-              </motion.p>
+              <motion.p variants={variantsRight}>{p2}</motion.p>
+              <motion.p variants={variantsRight}>{p3}</motion.p>
             </motion.div>
 
             <motion.div className="information" variants={variantsRight}>

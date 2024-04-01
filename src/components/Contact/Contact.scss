@@ -3,10 +3,7 @@
 
 .Contact {
     width: 100%;
-    background: url('../../assets/img/images/stars.png') no-repeat;
-    background-position-y: center center;
-    background-size: cover;
-
+    // background: radial-gradient(ellipse at bottom, $color-1 30%, $color-12 100%);
 
 
     .container {
@@ -26,8 +23,6 @@
             justify-content: center;
             flex-direction: column;
         }
-
-
 
         .textContainer {
             flex: 1;

@@ -11,7 +11,6 @@ import "./Index.scss";
 const Index = () => {
   return (
     <div className="index">
-
       <Header />
 
       <section id="Hero" className="Hero">
@@ -21,6 +20,9 @@ const Index = () => {
         <About />
       </section>
       <section id="Skills" className="Skills">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
         <Skills />
       </section>
       <section id="Portfolio" className="Portfolio">
@@ -30,9 +32,12 @@ const Index = () => {
         <Experience />
       </section>
       <section id="Contact" className="Contact">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
         <Contact />
-        <Footer />
       </section>
+      <Footer />
     </div>
   );
 };

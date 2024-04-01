@@ -2,6 +2,8 @@
 
 .Portfolio {
     width: 100%;
+    background: radial-gradient(ellipse at bottom, $color-1 30%, $color-12 100%);
+
 
     .container {
         display: flex;
@@ -134,7 +136,10 @@
                         }
 
                         img {
+                            max-width: 350px;
+                            min-width: 320px;
                             width: 100%;
+                            max-height: 200px;
                             height: 100%;
                             object-fit: cover;
                             border-radius: 1rem 1rem 0px 0px;

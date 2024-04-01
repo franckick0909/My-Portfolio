@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import propeTypes from "prop-types";
 
-const Modal = ({ imageSrc, titleSrc }) => {
+const Modal = ({ imageSrc, titleSrc, close }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +13,7 @@ const Modal = ({ imageSrc, titleSrc }) => {
 
   return (
     <>
-      <button onClick={toggleModal}>Open Modal</button>
+      <button onClick={toggleModal} className="btn-modal">{open}</button>
       {isOpen && (
         <motion.div
           className="modal"
@@ -24,7 +24,7 @@ const Modal = ({ imageSrc, titleSrc }) => {
             <img src={imageSrc} alt={titleSrc} />
 
             <button onClick={toggleModal} className="btn btn-1 btn-modal">
-              Close Modal
+              {close}
             </button>
           </div>
         </motion.div>
@@ -36,6 +36,8 @@ const Modal = ({ imageSrc, titleSrc }) => {
 Modal.propTypes = {
   imageSrc: propeTypes.string.isRequired,
   titleSrc: propeTypes.string.isRequired,
+  close: propeTypes.string.isRequired,
+  open: propeTypes.string.isRequired,
 };
 
 export default Modal;

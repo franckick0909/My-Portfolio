@@ -3,6 +3,8 @@
 .About {
     width: 100%;
     position: relative;
+    background: radial-gradient(ellipse at bottom, $color-1 30%, $color-12 100%);
+
 
     h1 {
         font-size: clamp(6.5vh, 8vw, 30vh);

@@ -109,7 +109,7 @@ const Portfolio = () => {
 
   const variants = {
     initial: {
-      x: 100,
+      x: 200,
       opacity: 0,
     },
     animate: {
@@ -120,7 +120,7 @@ const Portfolio = () => {
         type: "spring",
         damping: 20,
         duration: 1,
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
         delayChildren: 0.1,
       },
     },
@@ -144,13 +144,32 @@ const Portfolio = () => {
     },
   };
 
+    const variant = {
+      hidden: {
+        opacity: 0,
+        scale: 0.2,
+        y: -100,
+      },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+          damping: 10,
+          stiffness: 100,
+          type: "spring",
+        },
+      },
+    };
+
   const { t } = useTranslation();
   const { h1, h2, p, p1, btn } = t("portfolio");
 
   return (
-    <motion.div className="container">
-      <h1>{h1}</h1>
-
+    <motion.div className="container" >
+      <motion.h1 variants={variant} initial="hidden" whileInView="visible">
+        {h1}
+      </motion.h1>
       <motion.div
         className="text"
         variants={animVariants}
@@ -235,7 +254,7 @@ const Portfolio = () => {
                   <div className="overlay">
                     <div className="overlay__content">
                       <h2 className="projetName">{item.name}</h2>
-                      <Link to={item.link} className="projetLink btn btn-1">
+                      <Link to={item.link} className="projetLink btn btn-3">
                         {btn} <FaRocket />
                       </Link>
                     </div>

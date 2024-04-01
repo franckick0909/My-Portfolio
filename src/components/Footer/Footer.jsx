@@ -4,7 +4,6 @@ import "./Footer.scss";
 import { FaAt, FaPhoneFlip, FaGhost, FaLocationDot } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
-import Like from "../Like/Like";
 
 const Footer = () => {
 
@@ -15,7 +14,7 @@ const Footer = () => {
      <div className="content">
          <div className="content__logo">
           <Logo />
-          <LanguageSelector />
+          <LanguageSelector className="lang" />
         </div>
 
         <div className="content__center">
@@ -29,7 +28,6 @@ const Footer = () => {
           <ul>
             <li>
               <span><FaGhost /></span>Franck Chapelon 
-              <Like />
             </li>
             <li>
               <span>
