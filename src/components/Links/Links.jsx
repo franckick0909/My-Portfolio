@@ -2,8 +2,9 @@ import "./Links.scss";
 import { useState, useEffect } from "react";
 import links from "../../data/data.json";
 import { motion } from "framer-motion";
+import { PropTypes } from "prop-types";
 
-const Links = () => {
+const Links = ({ setIsOpen }) => {
 
       const [bg, setBg] = useState(false);
 
@@ -37,6 +38,7 @@ const Links = () => {
       <motion.div className="links" variants={variants}>
         {links.map((link, index) => (
           <motion.a
+            onClick={() => setIsOpen(false)}
             href={link.link}
             key={index}
             className={bg ? "link active" : "link"}
@@ -48,11 +50,15 @@ const Links = () => {
             duration={500}
             activeClass="active"
             spy={true}>
-            {link.name}
+            {link.name }
           </motion.a>
         ))}
       </motion.div>
     );
+};
+
+Links.propTypes = {
+  setIsOpen: PropTypes.func,
 };
 
 export default Links;
